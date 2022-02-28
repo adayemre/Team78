@@ -1,0 +1,2 @@
+public class mustafa {
+}
