@@ -57,7 +57,7 @@ Feature:setting homepage feature
 
     Examples:
       | username  | password | email            |
-      | usertugba | 123Tugba | tugbaa@gmail.com |
+      | usertugba | 123Tugba | usertugba@gmail.com |
 
 
   @TC_0004
