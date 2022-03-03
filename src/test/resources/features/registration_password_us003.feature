@@ -34,14 +34,14 @@ Feature: registration_password_us003
     And user verifies fifth strength bar colour add "z"
 
   @registration_password_negative_1
-  Scenario: Registration_Password_Negative_1
+  Scenario: Registration_Password_Negative_1_Lowercase
     Given user enter registration password "aF5*1"
-    And user verifies fifth strength bar colour add "z"
+    And user verifies negative fifth strength bar colour add "z"
 
   @registration_password_negative_2
-  Scenario: Registration_Password_Negative_2
+  Scenario: Registration_Password_Negative_2_Digit
     Given user enter registration password "g?+RM"
-    And user verifies all strengths bar colour add "7"
+    And user verifies negative all strengths bar colour add "7"
 
   @registration_password_required
   Scenario: Registration_Password_Required

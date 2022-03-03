@@ -88,4 +88,28 @@ public class Registration_Password_US003_StepDefs {
         actions.sendKeys(Keys.ENTER).perform();
         Assert.assertEquals("Your password is required to be at least 4 characters.", registrationPasswordUs003.passwordInvalid4Char.getText());
     }
+
+    @And("user verifies negative fifth strength bar colour add {string}")
+    public void user_Verifies_Negative_Fifth_Strength_Bar_Colour_Add(String string) {
+        String fifthBarColourBefore = registrationPasswordUs003.fifthStrengthBar.getAttribute("style");
+        registrationPasswordUs003.firstPasswordBox.sendKeys(string);
+        String fifthBarColourAfter = registrationPasswordUs003.fifthStrengthBar.getAttribute("style");
+        Assert.assertEquals("background-color: rgb(221, 221, 221);", fifthBarColourAfter);
+        Assert.assertEquals(fifthBarColourBefore,fifthBarColourAfter);
+    }
+
+    @And("user verifies negative all strengths bar colour add {string}")
+    public void user_Verifies_Negative_All_Strengths_Bar_Colour_Add(String string) {
+        int sizeOfBar = registrationPasswordUs003.strengthsBar.size();
+        String[] coloursOfStrengthBefore = new String[sizeOfBar];
+        String[] coloursOfStrengthAfter = new String[sizeOfBar];
+        for (int i=0; i<sizeOfBar;i++){
+            coloursOfStrengthBefore[i] = registrationPasswordUs003.strengthsBar.get(i).getAttribute("style");
+        }
+        registrationPasswordUs003.firstPasswordBox.sendKeys(string);
+        for (int i=0; i<sizeOfBar;i++){
+            coloursOfStrengthAfter[i] = registrationPasswordUs003.strengthsBar.get(i).getAttribute("style");
+        }
+        Assert.assertTrue(Arrays.equals(coloursOfStrengthBefore, coloursOfStrengthAfter));
+    }
 }
