@@ -50,8 +50,8 @@ public class SettingsPage {
 
     @FindBy(xpath = "//input[@name='firstName']")
     public WebElement firstNameBox;
-
-    @FindBy(xpath = "//*[text()='SettingsSaved!']")
+    //div[@role='alert']
+    @FindBy(xpath = "//div[@role='alert']")
     public WebElement settingsSavedMsg;
 
     @FindBy(xpath = "//input[@name='lastName']")

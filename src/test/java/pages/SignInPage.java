@@ -29,4 +29,7 @@ public class SignInPage {
 
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement accountMenu;
+
+    @FindBy (xpath = "(//*[@href='#appointment'])[1]")
+    public WebElement makeAnAppoinment;
 }

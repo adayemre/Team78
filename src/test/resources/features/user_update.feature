@@ -16,7 +16,7 @@ Feature:setting homepage feature
     And User clicks on firstnamebox and clears
     And User updates firstname as "<firstname>"
     And User clicks on save button
-#    And User verifies the Settings saved! message
+    And User verifies the Settings saved! message
     Then Close the application
 
     Examples:
@@ -34,7 +34,7 @@ Feature:setting homepage feature
     And User clicks on lastnamebox and clears
     And User updates lastname as "<lastname>"
     And User clicks on save button
-#    And User verifies the Settings saved! message
+    And User verifies the Settings saved! message
     Then Close the application
 
     Examples:
@@ -52,11 +52,11 @@ Feature:setting homepage feature
     And User clicks on emailbox and clears
     And User updates email as "<email>"
     And User clicks on save button
-#    And User verifies the Settings saved! message
+    And User verifies the Settings saved! message
     Then Close the application
 
     Examples:
-      | username  | password | email            |
+      | username  | password | email               |
       | usertugba | 123Tugba | usertugba@gmail.com |
 
 
