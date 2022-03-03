@@ -1,9 +1,11 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.HomePage;
 import pages.SettingsPage;
 import pages.SignInPage;
@@ -138,5 +140,75 @@ public class HomePageStepDefs {
 
 
 
+    @Then("user clicks make an appointment button")
+    public void user_clicks_make_an_appointment_button() {
+       Driver.waitAndClick(homePage.makeAppointmentButton);
+    }
 
+
+    @Then("user clear the date box and enters a valid date")
+    public void user_clear_the_date_box_and_enters_a_valid_date() {
+        Driver.waitAndClick(homePage.dateBox);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
+        homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
+        Driver.wait(2);
+        Driver.waitAndSendText(homePage.dateBox,"05052022");
+
+
+    }
+
+
+    @Then("verifies that the invalid date message does not appear")
+    public void verifies_that_the_invalid_date_message_does_not_appear() {
+        Driver.wait(3);
+        Assert.assertFalse(homePage.appoinmentDateCanNotBePastMessage.isEnabled());
+    }
+
+
+    @Then("user clear the date box and enters a past date")
+    public void user_clear_the_date_box_and_enters_a_past_date() {
+        Driver.waitAndClick(homePage.dateBox);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
+        homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
+        Driver.wait(2);
+        Driver.waitAndSendText(homePage.dateBox,"05052020");
+    }
+
+
+    @And("verifies that the invalid date message visible")
+    public void verifiesThatTheInvalidDateMessageVisible() {
+      Driver.wait(3);
+      Assert.assertTrue(homePage.appoinmentDateCanNotBePastMessage.isDisplayed());
+    }
+
+
+
+    @Then("the order of date should be mm_dd_yyyy format")
+    public void the_order_of_date_should_be_mm_dd_yyyy_format() {
+        Driver.waitAndClick(homePage.dateBox);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.clear();
+        homePage.dateBox.sendKeys(Keys.ARROW_RIGHT);
+        homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
+        homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
+        Driver.wait(2);
+        String dateFormat = homePage.dateBox.getText();
+        Driver.wait(2);
+        Assert.assertEquals(dateFormat,"mm/dd/yyyy");
+    }
 }

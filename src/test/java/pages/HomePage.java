@@ -18,6 +18,15 @@ public class HomePage {
     @FindBy(xpath = "(//*[@class='dropdown-item'])[1]")
     public WebElement signIn;
 
+    @FindBy (xpath = "//input[@name='appoDate']")
+    public WebElement appoinmentDateCanNotBePastMessage;
+
+    @FindBy(id = "appoDate")
+    public WebElement dateBox;
+
+    @FindBy(xpath = "//a[@class='appointment-btn scrollto']")
+    public WebElement makeAppointmentButton;
+
 
 
 
