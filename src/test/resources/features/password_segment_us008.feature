@@ -9,7 +9,7 @@ Feature: password_segment_us008
     And user clicks sign_in_menu
     Then user verifies sign_in_title
     And user enter username as "userrecep"
-    And user enter password as "123recep"
+    And user enter password as "123Recep"
     And user clicks sign_in_button
     Then user verifies name is visible on homepage
     And user clicks account_menu
@@ -27,7 +27,7 @@ Feature: password_segment_us008
     And user clicks sign_out_menu
     Examples:
       | currentPassword | newPassword | confirmationPassword |
-      | 123recep        | 123Recep    |                      |
+      | 123Recep        | 123recep    |                      |
 
   @for_strongerpass_onelowercase
   Scenario Outline: For_StrongerPass_OneLowercase
@@ -101,7 +101,7 @@ Feature: password_segment_us008
     And user clicks sign_out_menu
     Examples:
       | currentPassword | newPassword | confirmationPassword |
-      | 123recep        | 123Recep    | 123reCEP             |
+      | 123Recep        | 123recep    | 123reCEP             |
 
   @for_password_is_required
   Scenario Outline: For_Password_Is_Required
@@ -114,7 +114,7 @@ Feature: password_segment_us008
     And user clicks sign_out_menu
     Examples:
       | currentPassword | newPassword | confirmationPassword |
-      |                 | 123Recep    | 123Recep             |
+      |                 | 123recep    | 123recep             |
 
   @for_password_not_changed
   Scenario Outline: For_Password_Not_Changed
@@ -127,7 +127,7 @@ Feature: password_segment_us008
     And user clicks sign_out_menu
     Examples:
       | currentPassword | newPassword | confirmationPassword |
-      | 123reCEP        | 123Recep    | 123Recep             |
+      | 123ReCEP        | 123recep    | 123recep             |
 
   @old_pass_shouldnt_use
   Scenario Outline: Old_Pass_Shouldnt_Use
@@ -141,9 +141,9 @@ Feature: password_segment_us008
     And user clicks account_menu
     And user clicks sign_in_menu
     And user enter username as "userrecep"
-    And user enter password as "123recep"
+    And user enter password as "123Recep"
     And user clicks sign_in_button
     Then user verifies authentication incorrect message
     Examples:
       | currentPassword | newPassword | confirmationPassword |
-      | 123recep        | 123Recep    | 123Recep             |
+      | 123Recep        | 123recep    | 123recep             |
