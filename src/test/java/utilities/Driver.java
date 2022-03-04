@@ -26,7 +26,7 @@ public class Driver {
     //We will create and initialize the driver when it is null
     //We can use Driver class with different browser(chrome,firefox,headless)
     private Driver() {
-        //we don't want to create another abject. Singleton pattern
+        //we don't want to create another object. Singleton pattern
     }
 
     //to initialize the driver we create a static method
