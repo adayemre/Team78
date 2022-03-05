@@ -3,8 +3,8 @@ Feature: registration feature
 
   @UIRegistration
   @registration_ssn_valid
-  Scenario: TC01 user should be able to register with a valid ssn
-    And user enters ssn number
+  Scenario Outline: TC01 user should be able to register with a valid ssn
+    Given user enters ssn number as "<valid ssn>"
     And user enters firstname
     And user enters lastname
     And user provides username
@@ -15,11 +15,17 @@ Feature: registration feature
     Then user verifies the success message as "Registration Saved"
     And user creates the records to a correspondent file
 
+    Examples: valid ssn data
+    |valid ssn  |
+    |383-06-4367|
+    |635-57-1782|
+
+
 
   @UIRegistration
   @registration_ssn_invalid
   Scenario Outline: TC01 user should not be able to register with an invalid ssn
-    And user enters ssn number as "<invalid ssn>"
+    Given user enters ssn number as "<invalid ssn>"
     And user enters firstname
     And user enters lastname
     And user provides username
@@ -46,7 +52,7 @@ Feature: registration feature
     @UIRegistration
     @registration_ssn_blank
     Scenario Outline: TC02 ssn can not be left blank
-      And user enters ssn number as "<blank>"
+      Given user enters ssn number as "<blank>"
       And user enters firstname
       And user enters lastname
       And user provides username
@@ -63,7 +69,7 @@ Feature: registration feature
       @UIRegistration
       @registration_firstname_valid
       Scenario Outline: : TC03 user should be able to register with a valid firstname
-        And user enters ssn number
+        Given user enters ssn number
         And user enters firstname as "<valid firstname>"
         And user enters lastname
         And user provides username
@@ -86,7 +92,7 @@ Feature: registration feature
       @UIRegistration
       @registration_firstname_blank
       Scenario Outline: TC03 first name can not be left blank
-        And user enters ssn number
+        Given user enters ssn number
         And user enters firstname as "<blank>"
         And user enters lastname
         And user provides username
@@ -104,7 +110,7 @@ Feature: registration feature
       @UIRegistration
       @registration_lastname_valid
       Scenario Outline: TC04 user should be able to register with a valid lastname
-        And user enters ssn number
+        Given user enters ssn number
         And user enters firstname
         And user enters lastname as "<valid lastname>"
         And user provides username
@@ -126,7 +132,7 @@ Feature: registration feature
       @UIRegistration
       @registration_lastname_blank
       Scenario Outline: TC04 last name can not be left blank
-        And user enters ssn number
+        Given user enters ssn number
         And user enters firstname
         And user enters lastname as "<blank>"
         And user provides username

@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.RegistrationPageBT;
 import pojos.Registrant;
 import utilities.Driver;
@@ -66,7 +67,6 @@ public class RegistrationStepDefsBT {
         String password=faker.internet().password(8,20,true,true);
         registrant.setPassword(password);
         Driver.waitAndSendText(registrationPageBT.firstPasswordTextbox,password);
-        //registrationPageBT.firstPasswordTextbox.sendKeys(password);
     }
     @Given("user provides secondPassword")
     public void user_provides_second_password() {
