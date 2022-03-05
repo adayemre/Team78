@@ -15,15 +15,15 @@ public class StaffFunctions {
     public WebElement searchPatientButton;
     @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[1]/div[2]/input")
     public WebElement patientSearchBox;
-    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[2]/div/table/tbody/tr[16]/td[16]/div/a[1]")
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div[2]/div/table/tbody/tr/td[16]/div/a[1]/span/span")
     public WebElement viewButton;
     @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/h2/span")
     public WebElement patientId;
-    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[2]/div/table/tbody/tr[19]/td[16]/div/a[2]/span/span")
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div[2]/div/table/tbody/tr/td[16]/div/a[2]/span/span")
     public WebElement editButton;
     @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[1]/div[2]/input")
     public WebElement searchBox;
-    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[2]/div/table/tbody/tr/td[16]/div/a[1]/span/span")
-    public WebElement searchList;
+    @FindBy(xpath = " //*[@id='app-view-container']/div/div/div/div[2]/div/table/thead/tr/th[1]/span")
+    public WebElement searchResult;
 
 }

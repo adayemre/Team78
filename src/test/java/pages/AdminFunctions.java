@@ -15,7 +15,7 @@ public class AdminFunctions {
     public WebElement patientOption;
     @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/div[1]/div/table/tbody/tr/td/div/a")
     public WebElement viewButton;
-    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[2]/div/table/tbody/tr[19]/td[16]/div/a[2]/span/span")
+    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/div[1]/div/table/tbody/tr/td[16]/div/a[2]/span/span")
     public WebElement editButton;
     @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[16]/div/a[3]")
     public WebElement deleteButton;

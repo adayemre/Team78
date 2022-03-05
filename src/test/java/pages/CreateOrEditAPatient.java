@@ -9,7 +9,7 @@ public class CreateOrEditAPatient {
     public CreateOrEditAPatient(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//*[@id='patient-firstName']")
+    @FindBy(id = "patient-firstName")
     public WebElement firstNameBox;
     @FindBy(xpath = "//*[@id='patient-lastName']")
     public WebElement lastNameBox;
@@ -33,10 +33,12 @@ public class CreateOrEditAPatient {
     public WebElement countryDropDown;
     @FindBy(id = "patient-cstate")
     public WebElement stateDropDown;
-    @FindBy(linkText = "save")
+    @FindBy(xpath = "//*[@id='save-entity']")
     public WebElement saveButton;
-    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/h2/span")
-    public WebElement savedPatient;
+    @FindBy(xpath = "//*[@id='app-view-container']/div")
+    public WebElement savedPatientStaff;
+    @FindBy(xpath = "//*[@id='app-view-container']/div")
+    public WebElement savedPatientAdmin;
    // @FindBy(className = "Toastify__toast-container Toastify__toast-container--top-left toastify-container")
    // public WebElement saveSuccesAlert;
 

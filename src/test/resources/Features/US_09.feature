@@ -23,16 +23,16 @@ Feature:  View, edit and delete Patient information, Validate them using API and
     When User signs in as Staff
     Then click on MY PAGES dropdown
     Then click on Search Patient button
-    Then click on edit button on patient info
+    Then click on edit button on patient info as Staff User
     Then edit the patient informations and click on save button
     Then verify patient informations are updated
     Then sign out
     Then User signs in as Admin
     Then click on Items&Titiles dropdown
     Then click on Patients
-    Then click on edit button on patient info
+    Then click on edit button on patient info as Admin User
     Then edit the patient informations and click on save button
-    Then verify patient informations are updated
+    Then verify patient informations are updated as Admin
     Then sign out
 
   @US_09-TC_03
@@ -62,10 +62,12 @@ Feature:  View, edit and delete Patient information, Validate them using API and
 
   @US_09-TC07
   Scenario:All options above can be done by an Admin and staff, but staff cannot delete patients
+    When sign out
     When  User signs in as Staff
     Then click on MY PAGES dropdown
     Then click on Search Patient button
     Then verify Delete button is not dispalyed
+    Then sign out
 
   @US_09-TC08
   Scenario: Staff should be able to search the patients by their SSN ids, but Admin cannot

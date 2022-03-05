@@ -5,12 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.*;
 import utilities.Driver;
 
-public class US_09 {
+public class US_09_StepDefs {
     WebDriver driver;
     SignInPage signInPage=new SignInPage();
     StaffFunctions staffFunctions =new StaffFunctions();
@@ -83,16 +84,35 @@ public class US_09 {
     }
 
 
-    @Then("click on edit button on patient info")
-    public void click_on_edit_button_on_patient_info() {
+    @Then("click on edit button on patient info as Staff User")
+    public void clickOnEditButtonOnPatientInfoAsStaffUser() {
+        Driver.waitAndClick(staffFunctions.editButton);
+    }
+    @Then("click on edit button on patient info as Admin User")
+    public void clickOnEditButtonOnPatientInfoAsAdminUser() {
         Driver.waitAndClick(adminFunctions.editButton);
     }
 
     @Then("edit the patient informations and click on save button")
-    public void edit_the_patient_informations_and_click_on_save_button() {
+    public void edit_the_patient_informations_and_click_on_save_button() throws InterruptedException {
+        Driver.waitAndClick(createOrEditAPatient.firstNameBox);
+        createOrEditAPatient.firstNameBox.clear();
     createOrEditAPatient.firstNameBox.sendKeys(faker.name().firstName());
+        createOrEditAPatient.lastNameBox.clear();
     createOrEditAPatient.lastNameBox.sendKeys(faker.name().lastName());
-    //createOrEditAPatient.birthDateBox.sendKeys(faker.date().birthday().toString());
+
+    Driver.waitAndClick(createOrEditAPatient.birthDateBox);
+    createOrEditAPatient.birthDateBox.clear();
+    createOrEditAPatient.birthDateBox.sendKeys(Keys.ARROW_RIGHT);
+    createOrEditAPatient.birthDateBox.clear();
+    createOrEditAPatient.birthDateBox.sendKeys(Keys.ARROW_RIGHT);
+    createOrEditAPatient.birthDateBox.clear();
+    createOrEditAPatient.birthDateBox.sendKeys(Keys.ARROW_RIGHT);
+    createOrEditAPatient.birthDateBox.sendKeys(Keys.ARROW_LEFT);
+    createOrEditAPatient.birthDateBox.sendKeys(Keys.ARROW_LEFT);
+    createOrEditAPatient.birthDateBox.sendKeys(Keys.ARROW_LEFT);
+    Driver.waitAndSendText(createOrEditAPatient.birthDateBox, "01.01.0020001212A");
+
     createOrEditAPatient.eMailBox.clear();
     createOrEditAPatient.eMailBox.sendKeys(faker.internet().emailAddress());
     createOrEditAPatient.phoneNumberBox.clear();
@@ -101,37 +121,42 @@ public class US_09 {
     selectGender.selectByIndex(0);
     Select selectBlood=new Select(createOrEditAPatient.bloodGroupDropDown);
     selectBlood.selectByIndex(1);
+    createOrEditAPatient.addressBox.clear();
     createOrEditAPatient.addressBox.sendKeys(faker.address().fullAddress());
+    createOrEditAPatient.descriptionBox.clear();
     createOrEditAPatient.descriptionBox.sendKeys("Sick");
     Select user=new Select(createOrEditAPatient.userPatientDropDown);
     user.selectByIndex(0);
     Select country=new Select(createOrEditAPatient.countryDropDown);
+    country.selectByIndex(6);
+    Thread.sleep(2);
     country.selectByIndex(1);
-   // createOrEditAPatient.stateDropDown.click();
+    Driver.waitAndClick(createOrEditAPatient.stateDropDown);
     Select state=new Select(createOrEditAPatient.stateDropDown);
-   // state.selectByIndex(1);
- //   createOrEditAPatient.saveButton.click();
-
-
-
-
-
+    //state.selectByIndex(1);
+     Driver.waitAndClick(createOrEditAPatient.saveButton);
     }
 
     @Then("verify patient informations are updated")
     public void verify_patient_informations_are_updated() {
-     //   Assert.assertTrue(createOrEditAPatient.savedPatient.isDisplayed());
+       // Assert.assertEquals(createOrEditAPatient.savedPatient.getText(),"Patient");
+
+        Assert.assertTrue(createOrEditAPatient.savedPatientStaff.isDisplayed());
     }
 
 
     @Then("enter a valid SSN ID in the Patients search box")
-    public void enter_a_valid_ssn_id_in_the_patients_search_box() {
+    public void enter_a_valid_ssn_id_in_the_patients_search_box() throws InterruptedException {
+
+        staffFunctions.searchBox.click();
+        Thread.sleep(3);
         staffFunctions.searchBox.sendKeys("319-04-4812");
+
     }
 
     @Then("verify the patient informations are  invoked")
     public void verify_the_patient_informations_are_invoked() {
-        Assert.assertTrue(staffFunctions.searchList.isDisplayed());
+        Assert.assertTrue(staffFunctions.searchResult.isDisplayed());
     }
 
 
@@ -142,6 +167,7 @@ public class US_09 {
 
     @Then("click on Delete button on the opening alert")
     public void click_on_delete_button_on_the_opening_alert() {
+
         Driver.waitAndClick(adminFunctions.confirmDelete);
     }
 
@@ -162,4 +188,8 @@ public class US_09 {
     }
 
 
+    @Then("verify patient informations are updated as Admin")
+    public void verifyPatientInformationsAreUpdatedAsAdmin() {
+        Assert.assertTrue(createOrEditAPatient.savedPatientAdmin.isDisplayed());
+    }
 }
