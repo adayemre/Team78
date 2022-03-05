@@ -1,9 +1,9 @@
-@smoke_test
+
 Feature: registration feature
 
+  @UIRegistration
   @registration_ssn_valid
-  Scenario: user should be able to register with a valid ssn
-    Given user is on the registration page
+  Scenario: TC01 user should be able to register with a valid ssn
     And user enters ssn number
     And user enters firstname
     And user enters lastname
@@ -13,11 +13,12 @@ Feature: registration feature
     And user provides secondPassword
     And user clicks on register button
     Then user verifies the success message as "Registration Saved"
+    And user creates the records to a correspondent file
 
 
+  @UIRegistration
   @registration_ssn_invalid
-  Scenario Outline: user should not be able to register with an invalid ssn
-    Given user is on the registration page
+  Scenario Outline: TC01 user should not be able to register with an invalid ssn
     And user enters ssn number as "<invalid ssn>"
     And user enters firstname
     And user enters lastname
@@ -42,9 +43,9 @@ Feature: registration feature
     |123-45-67891|
     |123-$5-6789 |
 
+    @UIRegistration
     @registration_ssn_blank
-    Scenario Outline: ssn can not be left blank
-      Given user is on the registration page
+    Scenario Outline: TC02 ssn can not be left blank
       And user enters ssn number as "<blank>"
       And user enters firstname
       And user enters lastname
@@ -59,11 +60,11 @@ Feature: registration feature
       |blank|
       |     |
 
+      @UIRegistration
       @registration_firstname_valid
-      Scenario: user should be able to register with a valid firstname
-        Given user is on the registration page
+      Scenario Outline: : TC03 user should be able to register with a valid firstname
         And user enters ssn number
-        And user enters firstname
+        And user enters firstname as "<valid firstname>"
         And user enters lastname
         And user provides username
         And user provides email
@@ -71,10 +72,20 @@ Feature: registration feature
         And user provides secondPassword
         And user clicks on register button
         Then user verifies the success message as "Registration Saved"
+        And user creates the records to a correspondent file
 
+        Examples: valid first names
+        |valid firstname|
+        |Stanton        |
+        |Jo             |
+        |Şahnur         |
+        |Flávia         |
+
+
+
+      @UIRegistration
       @registration_firstname_blank
-      Scenario Outline: first name can not be left blank
-        Given user is on the registration page
+      Scenario Outline: TC03 first name can not be left blank
         And user enters ssn number
         And user enters firstname as "<blank>"
         And user enters lastname
@@ -89,22 +100,32 @@ Feature: registration feature
         |blank|
         |     |
 
+
+      @UIRegistration
       @registration_lastname_valid
-      Scenario: user should be able to register with a valid lastname
-        Given user is on the registration page
+      Scenario Outline: TC04 user should be able to register with a valid lastname
         And user enters ssn number
         And user enters firstname
-        And user enters lastname
+        And user enters lastname as "<valid lastname>"
         And user provides username
         And user provides email
         And user provides firstPassword
         And user provides secondPassword
         And user clicks on register button
         Then user verifies the success message as "Registration Saved"
+        And user creates the records to a correspondent file
 
+        Examples: valid lastnames
+          |valid lastname |
+          |D'Largy        |
+          |King, Jr.      |
+          |Çağıran        |
+          |Quiñones       |
+
+
+      @UIRegistration
       @registration_lastname_blank
-      Scenario Outline: last name can not be left blank
-        Given user is on the registration page
+      Scenario Outline: TC04 last name can not be left blank
         And user enters ssn number
         And user enters firstname
         And user enters lastname as "<blank>"

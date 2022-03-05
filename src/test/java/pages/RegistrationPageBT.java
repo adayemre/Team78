@@ -41,5 +41,12 @@ public class RegistrationPageBT {
     @FindBy(xpath = "//*[@class='invalid-feedback']")
     public WebElement errorMessage;
 
+    @FindBy(id = "details-button")
+    public WebElement advancedButton;
+
+    @FindBy(id = "proceed-link")
+    public WebElement proceedButton;
+
+
 
 }
