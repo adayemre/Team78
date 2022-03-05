@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uisteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -158,16 +158,14 @@ public class HomePageStepDefs {
         homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
         homePage.dateBox.sendKeys(Keys.ARROW_LEFT);
         Driver.wait(2);
-        Driver.waitAndSendText(homePage.dateBox,"05052022");
-
-
+        Driver.waitAndSendText(homePage.dateBox,"12302022");
     }
 
 
     @Then("verifies that the invalid date message does not appear")
     public void verifies_that_the_invalid_date_message_does_not_appear() {
         Driver.wait(3);
-        Assert.assertFalse(homePage.appoinmentDateCanNotBePastMessage.isEnabled());
+        Assert.assertTrue(homePage.appoinmentDateCanNotBePastMessage == null);
     }
 
 
@@ -189,7 +187,7 @@ public class HomePageStepDefs {
 
     @And("verifies that the invalid date message visible")
     public void verifiesThatTheInvalidDateMessageVisible() {
-      Driver.wait(3);
+     Driver.wait(3);
       Assert.assertTrue(homePage.appoinmentDateCanNotBePastMessage.isDisplayed());
     }
 
@@ -210,5 +208,6 @@ public class HomePageStepDefs {
         String dateFormat = homePage.dateBox.getText();
         Driver.wait(2);
         Assert.assertEquals(dateFormat,"mm/dd/yyyy");
+
     }
 }
