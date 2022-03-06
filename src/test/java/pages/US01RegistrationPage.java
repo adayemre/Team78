@@ -5,9 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class RegistrationPageBT {
+import java.util.List;
 
-    public RegistrationPageBT() {
+public class US01RegistrationPage {
+
+    public US01RegistrationPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -40,6 +42,9 @@ public class RegistrationPageBT {
 
     @FindBy(xpath = "//*[@class='invalid-feedback']")
     public WebElement errorMessage;
+
+    @FindBy(xpath = "//*[@class='invalid-feedback']")
+    public List<WebElement> errorMessageList;
 
     @FindBy(id = "details-button")
     public WebElement advancedButton;

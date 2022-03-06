@@ -1,4 +1,4 @@
 package stepdefinitions.database_stepdefs;
 
-public class DBRegistrantStepDefs {
+public class US01DBRegistrantStepDefs {
 }

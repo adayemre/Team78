@@ -19,13 +19,19 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
     }
 
+    @Before(order = 1, value = "@Appointment")
+    public void navigateToLandingPage(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_appointment_url"));
+    }
+
+
     @After
     public void tearDown(Scenario scenario){
         if (scenario.isFailed()) {
             final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png","screenshots");
         }
-
+        //Driver.closeDriver();
     }
 
 }
