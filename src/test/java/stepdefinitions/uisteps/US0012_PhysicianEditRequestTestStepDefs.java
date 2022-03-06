@@ -3,9 +3,8 @@ package stepdefinitions.uisteps;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import pages.US0012_PhysicianEditRequestTestPage;
 import utilities.Driver;
 
@@ -15,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 public class US0012_PhysicianEditRequestTestStepDefs {
      US0012_PhysicianEditRequestTestPage editRequestTestPage=new US0012_PhysicianEditRequestTestPage();
+     JavascriptExecutor js=(JavascriptExecutor)Driver.getDriver();
 
     @Then("user select one of the patient list and click edit button")
     public void userSelectOneOfThePatientListAndClickEditButton() {
@@ -34,6 +34,8 @@ public class US0012_PhysicianEditRequestTestStepDefs {
         Driver.waitAndClick(editRequestTestPage.requestTestButton);
         Driver.wait(3);
         assertTrue(editRequestTestPage.requestTestVerify.getText().contains("Test"));
+
+
     }
 
 
@@ -44,8 +46,15 @@ public class US0012_PhysicianEditRequestTestStepDefs {
 
     @When("clicks the some of checkmark options\\(Glucose, Urea, Creatinine, Sodium,Potassium, Total protein, Albumin, Hemoglobin)")
     public void clicksTheSomeOfCheckmarkOptionsGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobin() {
-         for(WebElement x: editRequestTestPage.itemsName) {
-           switch (x.getText().toString()){
+
+        js.executeScript("scroll(0, 50);");
+
+         for(int i= 0 ;i<editRequestTestPage.itemsName.size();i++){
+                   String x=editRequestTestPage.itemsName.get(i).getText();
+             System.out.println(x);
+             System.out.println(editRequestTestPage.checkmarkOptions.get(i).getAccessibleName());
+
+           switch (x){
                case "Glucose":
                    Driver.waitAndClick(editRequestTestPage.checkmarkOptions.get(0));
                    break;
@@ -66,12 +75,11 @@ public class US0012_PhysicianEditRequestTestStepDefs {
                    break;
                case "Albumin":
                    Driver.waitAndClick(editRequestTestPage.checkmarkOptions.get(6));
-                   Actions actions= new Actions(Driver.getDriver());
-                   actions.keyDown(Keys.ALT).perform();
                    break;
                case "Hemoglobin":
                    Driver.waitAndClick(editRequestTestPage.checkmarkOptions.get(7));
                    break;
+
            }
          }
     }
@@ -80,7 +88,7 @@ public class US0012_PhysicianEditRequestTestStepDefs {
     public void userVerifiesTheHaveFollowingItemsAsCheckmarkOptionsGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobin() {
 
 
-       for(int i=0;i<9;i++){
+       for(int i=0;i<12;i++){
           WebElement x= editRequestTestPage.checkmarkOptions.get(i);
 
           assertTrue(x.isEnabled());

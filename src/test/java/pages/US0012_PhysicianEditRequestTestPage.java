@@ -27,10 +27,7 @@ public class US0012_PhysicianEditRequestTestPage {
     @FindBy(xpath = "//tbody//tr//td[2]")
     public List<WebElement> itemsName;
 
-    @FindBy(xpath = "//tbody//tr//td[9]")
+    @FindBy(xpath = "//input[@type='checkbox']")
     public List<WebElement> checkmarkOptions;
-
-     @FindBy(xpath = "//button[@id='save-entity']")
-    public WebElement saveTestButton;
 
 }

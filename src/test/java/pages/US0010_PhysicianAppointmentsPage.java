@@ -25,14 +25,22 @@ public class US0010_PhysicianAppointmentsPage {
     @FindBy(xpath = "//tbody//tr")
     public List<WebElement> appointments_list;
 
-
     @FindBy(id="fromDate")
     public WebElement fromdate;
 
     @FindBy(id="toDate")
     public WebElement todate;
 
-
     @FindBy(xpath = "//table/thead/tr/th")
     public List<WebElement> table_head_list;
+
+    @FindBy(xpath = "//*[text()='Administration']")
+    public WebElement adminPages;
+
+    @FindBy(xpath = "//*[@id='entity-menu']")
+    public WebElement adminDropDown;
+
+    @FindBy(xpath = "//*[text()='Test Item']")
+    public WebElement testItem;
+
 }
