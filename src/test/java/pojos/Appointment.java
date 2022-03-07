@@ -2,6 +2,9 @@ package pojos;
 
 public class Appointment {
 
+
+
+
     private String firstname;
     private String lastname;
     private String ssn;
@@ -9,7 +12,7 @@ public class Appointment {
     private String phoneNumber;
     private String date;
 
-    //variables, constructor, getters, setter, toString
+    //variables, constructors, getters and setters, toString
 
 
     public Appointment() {
@@ -23,7 +26,6 @@ public class Appointment {
         this.phoneNumber = phoneNumber;
         this.date = date;
     }
-
 
     public String getFirstname() {
         return firstname;

@@ -7,8 +7,10 @@ import utilities.Driver;
 
 public class AppointmentPage {
 
-    public AppointmentPage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AppointmentPage(){
+
+        PageFactory.initElements(Driver.getDriver(), this);
+
     }
 
     @FindBy(xpath = "//*[text()='Make an']")
@@ -39,7 +41,9 @@ public class AppointmentPage {
     @FindBy(xpath = "//*[text()='Appointment registration saved!']")
     public WebElement successMessageToastContainer;
 
-
-
-
 }
+
+
+
+
+

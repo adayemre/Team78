@@ -1,0 +1,2 @@
+Registrant{firstName='Romana', lastName='Schultz', ssn='664-23-1385', login='julio.hessel', langKey='en', password='Fu7n%6fg', email='oscar.morissette@hotmail.com'}
+Registrant{firstName='Michael', lastName='Buckridge', ssn='569-26-6419', login='deana.sauer', langKey='en', password='P2!NA0h$d5!p', email='vance.orn@yahoo.com'}

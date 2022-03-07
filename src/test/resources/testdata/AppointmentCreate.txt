@@ -1,0 +1,25 @@
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122022'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='12122023'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='null'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='null'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='20231212'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2022-03-07'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2022-12-12'}
+AppointmentCreationAPI{firstName='PatientTUgba', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2022-12-12'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2025-12-12'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2025-12-12'}
+AppointmentCreationAPI{firstName='firstTugba', lastName='lastnametugba', ssn='677-85-5236', email='patientemail@gmail.com', phone='777-333-1414', startDate='2025-12-12'}
+AppointmentCreationAPI{firstName='firstTugba', lastName='lastnametugba', ssn='677-85-5236', email='patientemail@gmail.com', phone='777-333-1414', startDate='2025-12-12'}
+AppointmentCreationAPI{firstName='firstTugba', lastName='lastnametugba', ssn='677-85-5236', email='patientemail@gmail.com', phone='777-333-1414', startDate='2025-12-12'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2026-12-12'}
+AppointmentCreationAPI{firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2027-12-12'}
+AppointmentCreationAPI{user=null, firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2027-12-12'}
+AppointmentCreationAPI{user=null, firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2027-12-12'}
+AppointmentCreationAPI{user=null, firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2027-12-12'}
+AppointmentCreationAPI{user=null, firstName='Patient', lastName='Tugba', ssn='677-85-5486', email='patienttugba@gmail.com', phone='777-333-1414', startDate='2027-12-12'}

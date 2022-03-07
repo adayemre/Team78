@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.AppointmentPage;
 import pojos.Appointment;
 import utilities.Driver;
@@ -70,7 +71,7 @@ public class UIApppointmentStepDefs {
 //        date = getDate();
         appointment.setDate(date);
 
-        Driver.waitAndSendText(appointmentPage.dateTextbox, date);
+        Driver.waitAndSendText(appointmentPage.dateTextbox, date+ Keys.ENTER);
 
     }
     @Then("user requests appointment and verifies the success message")
@@ -78,7 +79,8 @@ public class UIApppointmentStepDefs {
 
         Driver.waitAndClick(appointmentPage.requestButton);
         saveAppointData(appointment);
+
         Assert.assertTrue(Driver.waitForVisibility(appointmentPage.successMessageToastContainer, 5).isDisplayed());
+    }
 
-
-    }}
+}

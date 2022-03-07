@@ -12,6 +12,9 @@ import pages.SignInPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class HomePageStepDefs {
 
 
@@ -38,7 +41,7 @@ public class HomePageStepDefs {
     public void verify_if_user_is_on_the_sign_in_page() {
 
         Driver.wait(2);
-        Assert.assertTrue(signInPage.signInText.isDisplayed());
+        assertTrue(signInPage.signInText.isDisplayed());
 
     }
 
@@ -84,7 +87,7 @@ public class HomePageStepDefs {
     @When("User verifies the Settings saved! message")
     public void user_verifies_the_settings_saved_message() {
         Driver.wait(3);
-        Assert.assertTrue(settingsPage.settingsSavedMsg.isDisplayed());
+        assertTrue(settingsPage.settingsSavedMsg.isDisplayed());
     }
 
     @When("User clicks on lastnamebox and clears")
@@ -121,21 +124,21 @@ public class HomePageStepDefs {
     @When("User verifies the Your first name is required. message")
     public void user_verifies_the_your_first_name_is_required_message() {
         Driver.wait(3);
-        Assert.assertTrue(settingsPage.firstNameRequiredMessage.isEnabled());
+        assertTrue(settingsPage.firstNameRequiredMessage.isEnabled());
     }
 
 
     @When("User verifies the Your last name is required. message")
     public void user_verifies_the_your_last_name_is_required_message() {
         Driver.wait(3);
-        Assert.assertTrue(settingsPage.lastNameRequiredMessage.isEnabled());
+        assertTrue(settingsPage.lastNameRequiredMessage.isEnabled());
     }
 
 
     @When("User verifies This field is invalid message")
     public void user_verifies_this_field_is_invalid_message() {
         Driver.wait(3);
-        Assert.assertTrue(settingsPage.thisFieldInvalidMsgForEmail.isEnabled());
+        assertTrue(settingsPage.thisFieldInvalidMsgForEmail.isEnabled());
     }
 
 
@@ -165,7 +168,13 @@ public class HomePageStepDefs {
     @Then("verifies that the invalid date message does not appear")
     public void verifies_that_the_invalid_date_message_does_not_appear() {
         Driver.wait(3);
-        Assert.assertTrue(homePage.appoinmentDateCanNotBePastMessage == null);
+//        Assert.assertEquals("",homePage.appoinmentDateCanNotBePastMessage.getText());
+//        Assert.assertTrue(homePage.appoinmentDateCanNotBePastMessage == null);
+//        Assert.assertFalse(homePage.appoinmentDateCanNotBePastMessage.isEnabled());
+        String pageSource = Driver.getDriver().getPageSource();
+        boolean result = pageSource.contains("Appointment date can not be past date!");
+//        assertTrue(result == false);
+        assertFalse(result);
     }
 
 
@@ -188,7 +197,7 @@ public class HomePageStepDefs {
     @And("verifies that the invalid date message visible")
     public void verifiesThatTheInvalidDateMessageVisible() {
      Driver.wait(3);
-      Assert.assertTrue(homePage.appoinmentDateCanNotBePastMessage.isDisplayed());
+      assertTrue(homePage.appoinmentDateCanNotBePastMessage.isDisplayed());
     }
 
 
@@ -208,6 +217,6 @@ public class HomePageStepDefs {
         String dateFormat = homePage.dateBox.getText();
         Driver.wait(2);
         Assert.assertEquals(dateFormat,"mm/dd/yyyy");
-
     }
+
 }
