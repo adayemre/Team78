@@ -12,7 +12,7 @@ import utilities.Driver;
 
 import static utilities.WriteToTxt.saveRegistrantData;
 
-public class US01RegistrationStepDefs {
+public class US01UIRegistrationStepDefs {
 
     US01RegistrationPage registrationPage =new US01RegistrationPage();
     Faker faker=new Faker();
@@ -35,7 +35,7 @@ public class US01RegistrationStepDefs {
     @Given("user enters firstname")
     public void user_enters_firstname() {
         String firstname=faker.name().firstName();
-        registrant.setFirstname(firstname);
+        registrant.setFirstName(firstname);
         Driver.waitAndSendText(registrationPage.firstnameTextbox,firstname);
 
     }
@@ -43,7 +43,7 @@ public class US01RegistrationStepDefs {
     @Given("user enters lastname")
     public void user_enters_lastname() {
         String lastname=faker.name().lastName();
-        registrant.setLastname(lastname);
+        registrant.setLastName(lastname);
         Driver.waitAndSendText(registrationPage.lastnameTextbox,lastname);
 
     }
@@ -52,7 +52,7 @@ public class US01RegistrationStepDefs {
     public void user_provides_username() {
         //String username=registrant.getFirstname()+registrant.getLastname();
         String username=faker.name().username();
-        registrant.setUsername(username);
+        registrant.setLogin(username);
         Driver.waitAndSendText(registrationPage.usernameTextbox,username);
     }
 
@@ -97,13 +97,13 @@ public class US01RegistrationStepDefs {
 
     @Given("user enters firstname as {string}")
     public void user_enters_firstname_as(String string) {
-        registrant.setFirstname(string);
+        registrant.setFirstName(string);
         registrationPage.firstnameTextbox.sendKeys(string);
     }
 
     @Given("user enters lastname as {string}")
     public void user_enters_lastname_as(String string) {
-        registrant.setLastname(string);
+        registrant.setLastName(string);
         registrationPage.lastnameTextbox.sendKeys(string);
     }
 

@@ -1,0 +1,8 @@
+tracy.hintz,Dahlia,Huels,383-06-4367,erna.ebert@yahoo.com,TroG0ib#9O6S3cRxr9
+michaela.wisozk,Fatima,Wilkinson,635-57-1782,paula.hills@gmail.com,tZ*P&qPI5t&P7^CN
+cheri.harber,Sixta,Boehm,024-85-5660,janene.kuhic@hotmail.com,0rU&b1i5wtd10F
+Registrant{ssn='691-81-5313', firstname='Bud', lastname='Robel', username='efrain.hyatt', email='eileen.howe@gmail.com', password='Ww25EMQr!ax4'}
+Registrant{ssn='527-87-5703', firstname='Alton', lastname='Casper', username='vergie.donnelly', email='theresia.cummings@gmail.com', password='Q9@L*%H7'}
+Registrant{firstName='Christian', lastName='Sporer', ssn='093-09-4553', login='rayna.smitham', langKey='null', password='y6zr&ALsfiI!', email='dave.zieme@hotmail.com'}
+Registrant{firstName='Oren', lastName='Borer', ssn='887-82-9699', login='booker.jaskolski', langKey='null', password='wUyrj@8qGoL!%50', email='eun.armstrong@hotmail.com'}
+Registrant{firstName='Lucille', lastName='Langosh', ssn='624-82-1136', login='robbie.bednar', langKey='null', password='hslR5B4A9rL6zqtJ', email='yolonda.cremin@hotmail.com'}
