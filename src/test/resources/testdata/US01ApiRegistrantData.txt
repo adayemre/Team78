@@ -5,3 +5,4 @@ Registrant{firstName='Larae', lastName='Stracke', ssn='164-71-7266', login='hilm
 Registrant{firstName='Nakesha', lastName='Carroll', ssn='840-44-5495', login='marry.stiedemann', langKey='Eng', password='j$r*3DSUG9C', email='loida.lowe@gmail.com'}
 Registrant{firstName='Grant', lastName='Fay', ssn='112-11-9915', login='cristy.harvey', langKey='Eng', password='8@q5m9lwZ', email='walker.jaskolski@yahoo.com'}
 Registrant{firstName='Nathaniel', lastName='Pollich', ssn='387-39-0993', login='isidra.gulgowski', langKey='Eng', password='$U5sW6mgChe3q', email='herlinda.fadel@hotmail.com'}
+Registrant{firstName='Toi', lastName='Hahn', ssn='062-62-7523', login='cyril.terry', langKey='Eng', password='U@2&Z9&s#', email='hilton.kutch@hotmail.com'}

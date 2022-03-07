@@ -2,7 +2,7 @@
 Feature: Registrant api test
 
   @ApiPostRegistrant
-  Scenario Outline: registrant test
+  Scenario Outline: TC09 user should create registrant using Api and validate
     Given user sets the necessary path params
     And user sets the expected data "<firstname>" "<lastname>" "<SSN>" "<email>" "<username>" "<password>" "<lan>"
     And user sends the POST request and gets the response
@@ -14,8 +14,7 @@ Feature: Registrant api test
     |Stephan  |Taylor  |215-83-1456|stephan@gmail.com|s.taylor |123T45as?|Eng|
 
 
-  @ApiGetRegistrant
-  Scenario Outline: api get request
+  Scenario Outline: TC08 user should get all registrant information using Api and validate them
     Given user sets the endpoint to get user info with "<SSN>"
     And user sets the expected data as "<firstname>" "<lastname>" "<SSN>" "<email>" "<username>" "<password>"
     And user makes a GET request and gets the response

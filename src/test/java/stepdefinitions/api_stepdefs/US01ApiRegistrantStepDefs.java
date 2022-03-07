@@ -111,7 +111,7 @@ public class US01ApiRegistrantStepDefs {
     @Then("user validates registrant information using api")
     public void user_validates_registrant_information_using_api() throws IOException {
         response.then().statusCode(200);
-        //response.prettyPrint();
+        response.prettyPrint();
 
         ObjectMapper obj=new ObjectMapper();
         Registrant actualRegistrant=obj.readValue(response.asString(),Registrant.class);

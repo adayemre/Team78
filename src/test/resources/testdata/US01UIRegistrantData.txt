@@ -6,3 +6,4 @@ Registrant{ssn='527-87-5703', firstname='Alton', lastname='Casper', username='ve
 Registrant{firstName='Christian', lastName='Sporer', ssn='093-09-4553', login='rayna.smitham', langKey='null', password='y6zr&ALsfiI!', email='dave.zieme@hotmail.com'}
 Registrant{firstName='Oren', lastName='Borer', ssn='887-82-9699', login='booker.jaskolski', langKey='null', password='wUyrj@8qGoL!%50', email='eun.armstrong@hotmail.com'}
 Registrant{firstName='Lucille', lastName='Langosh', ssn='624-82-1136', login='robbie.bednar', langKey='null', password='hslR5B4A9rL6zqtJ', email='yolonda.cremin@hotmail.com'}
+Registrant{firstName='Chun', lastName='Leannon', ssn='336-96-5589', login='hilario.wisozk', langKey='null', password='l@!j^2tE53P', email='genaro.dickens@hotmail.com'}
