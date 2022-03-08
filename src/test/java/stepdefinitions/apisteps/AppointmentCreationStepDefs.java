@@ -8,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.AppointmentMiddle;
 import pojos.AppointmentOuter;
+import utilities.ConfigurationReader;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,7 @@ import java.util.Map;
 import static Hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveAppointmentCreation;
 
 public class AppointmentCreationStepDefs {
@@ -79,12 +81,17 @@ public class AppointmentCreationStepDefs {
 //        assertEquals(appointmentCreationAPI.getLastName(),actualAppointment.getPatient().getLastName());
 //        assertEquals(appointmentCreationAPI.getSsn(),actualAppointment.getPatient().getUser().getSsn());
 
+    }
 
-
-
-
-
-
+    @Given("user sends the get request for appointments data")
+    public void user_sends_the_get_request_for_appointments_data() {
+        response = given().headers(
+                "Authorization",
+                "Bearer " + generateToken(),
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).when().get(ConfigurationReader.getProperty("appointments_endpoint"));
     }
 
 

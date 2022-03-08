@@ -1,7 +1,7 @@
 Feature: Appointment api test
 
 
-  @ApiAppointmentCreation
+#  @ApiAppointmentCreation
   Scenario Outline: appointment test
     Given user sets the necessary path params for appointment creation
     And user sets the expected data "<firstname>", "<lastname>" "<SSN>" "<email>" "<phone>"  and "<date>"

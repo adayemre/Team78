@@ -20,6 +20,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveRegistrantData;
 import static Hooks.Hooks.spec;
 
@@ -75,19 +76,51 @@ public class RegistrantApiSteps  {
         response.then().statusCode(201);
         response.prettyPrint();
 
-
-
         ObjectMapper obj = new ObjectMapper();
-
         Registrant actualRegistrant = obj.readValue(response.asString(),Registrant.class);
-
         System.out.println(actualRegistrant);
-
         assertEquals(registrant.getFirstName(),actualRegistrant.getFirstName());
         assertEquals(registrant.getLastName(),actualRegistrant.getLastName());
         assertEquals(registrant.getSsn(),actualRegistrant.getSsn());
+    }
 
+
+    @Given("user sends the get request for users data")
+    public void user_sends_the_get_request_for_users_data() {
+        response = given().headers(
+                "Authorization",
+                "Bearer " + generateToken(),
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
 
     }
+        /*
+        given().headers(
+                "Authorization",
+                "Bearer " + ConfigurationReader.getProperty("token"),
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
+
+         */
+
+
+
+
+
+    @Given("user deserializes data to Java")
+    public void user_deserializes_data_to_java() {
+        response.prettyPrint();
+    }
+
+    @Given("user saves the users data to correspondent files")
+    public void user_saves_the_users_data_to_correspondent_files() {
+
+    }
+
+
 
 }
