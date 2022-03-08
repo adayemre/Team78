@@ -1,7 +1,7 @@
 Feature: Appointment api test
 
 
-#  @ApiAppointmentCreation
+  @ApiAppointmentCreationPost
   Scenario Outline: appointment test
     Given user sets the necessary path params for appointment creation
     And user sets the expected data "<firstname>", "<lastname>" "<SSN>" "<email>" "<phone>"  and "<date>"
@@ -11,7 +11,7 @@ Feature: Appointment api test
 
     Examples: api test data
       | firstname | lastname | SSN         | email                  | phone        | date       |
-      | Patient   | Tugba    | 677-85-5486 | patienttugba@gmail.com | 777-333-1414 | 2027-12-12 |
+      | Patient   | Tugba    | 677-85-5486 | patienttugba@gmail.com | 777-333-1414 | 2032-11-12 |
 #      | firstTugba | lastnametugba | 677-85-5236 | patientemail@gmail.com | 777-333-1414 | 2025-12-12 |
 
 

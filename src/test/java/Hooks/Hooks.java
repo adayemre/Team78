@@ -26,8 +26,14 @@ public class Hooks {
 
 
 
-    @Before( value = "@ApiAppointmentCreation")
-    public void setupforAppointmentCreation(){
+    @Before( value = "@ApiAppointmentCreationPost")
+    public void setupforAppointmentPost(){
+        spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
+    }
+
+
+    @Before( value = "@ApiAppointmentCreationGet")
+    public void setupforAppointmentGet(){
         spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
     }
 

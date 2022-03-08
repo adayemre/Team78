@@ -20,6 +20,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utilities.ApiUtils.getRequest;
 import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveRegistrantData;
 import static Hooks.Hooks.spec;
@@ -87,13 +88,17 @@ public class RegistrantApiSteps  {
 
     @Given("user sends the get request for users data")
     public void user_sends_the_get_request_for_users_data() {
-        response = given().headers(
-                "Authorization",
-                "Bearer " + generateToken(),
-                "Content-Type",
-                ContentType.JSON,
-                "Accept",
-                ContentType.JSON).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
+
+        response = getRequest(generateToken(),ConfigurationReader.getProperty("registrant_endpoint"));
+
+//        This can  be also used but we created a method inside APIUtils
+//        response = given().headers(
+//                "Authorization",
+//                "Bearer " + generateToken(),
+//                "Content-Type",
+//                ContentType.JSON,
+//                "Accept",
+//                ContentType.JSON).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
 
     }
         /*
@@ -106,9 +111,6 @@ public class RegistrantApiSteps  {
                 ContentType.JSON).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
 
          */
-
-
-
 
 
     @Given("user deserializes data to Java")
