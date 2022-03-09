@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.AppoinmentInnest;
+import pojos.Appointment;
 import pojos.AppointmentMiddle;
 import pojos.AppointmentOuter;
 import utilities.ConfigurationReader;
@@ -26,6 +27,10 @@ public class AppointmentCreationStepDefs {
 
     AppointmentMiddle appointmentCreationAPI = new AppointmentMiddle();
     Response response;
+//    AppointmentMiddle appointmentList [];
+    AppointmentOuter appointmentOuterList [];
+
+
 
 
     @Given("user sets the necessary path params for appointment creation")
@@ -82,6 +87,17 @@ public class AppointmentCreationStepDefs {
 //        assertEquals(appointmentCreationAPI.getSsn(),actualAppointment.getPatient().getUser().getSsn());
 
     }
+    /*
+    İlknurun get kodları
+    @And("user sends the Get request and gets the response")
+public void userSendsTheGetRequestAndGetsTheResponse() {
+    response = given().headers("Authorization",
+                    "Bearer " + generateToken(),
+                    "Content-Type", ContentType.JSON,
+                    "Accept", ContentType.JSON).when().
+            get(ConfigurationReader.getProperty("physician_appointment_url"));
+}
+     */
 
 
     //GET REQUEST
@@ -101,8 +117,20 @@ public class AppointmentCreationStepDefs {
 
 
     @Given("user deserializes data to Java for appointments")
-    public void user_deserializes_data_to_java_for_appointments() {
-        response.prettyPrint();
+    public void user_deserializes_data_to_java_for_appointments() throws Exception {
+//       response.prettyPrint();
+        ObjectMapper obj = new ObjectMapper();
+//        appointmentList = obj.readValue(response.asString(),AppointmentMiddle[].class);
+//        System.out.println(appointmentList.length);
+//        for(int i = 0; i < appointmentList.length; i++){
+//            System.out.println("name" + appointmentList[i].getFirstName());
+//        }
+//165. ve 225. 229. appointment da sıkıntı var Null Pointer veriyor
+        appointmentOuterList = obj.readValue(response.asString(),AppointmentOuter[].class);
+        System.out.println(appointmentOuterList.length);
+        for(int i = 0; i < 165; i++){
+            System.out.println("name: " +i+ appointmentOuterList[i].getPatient().getUser().getLastName());
+        }
     }
 
 
