@@ -30,6 +30,7 @@ public class RegistrantApiSteps  {
     Registrant registrant = new Registrant();
     Faker faker = new Faker();
     Response response;
+    Registrant registrantsList [];
 
     @Given("user sets the necessary path params")
     public void user_sets_the_necessary_path_params() {
@@ -114,8 +115,16 @@ public class RegistrantApiSteps  {
 
 
     @Given("user deserializes data to Java")
-    public void user_deserializes_data_to_java() {
-        response.prettyPrint();
+    public void user_deserializes_data_to_java() throws Exception{
+//        response.prettyPrint();
+        ObjectMapper obj = new ObjectMapper();
+        registrantsList = obj.readValue(response.asString(),Registrant[].class);
+        System.out.println(registrantsList.length);
+        for(int i = 0; i < registrantsList.length; i++){
+            System.out.println("name" + registrantsList[i].getFirstName());
+        }
+        
+
     }
 
     @Given("user saves the users data to correspondent files")
