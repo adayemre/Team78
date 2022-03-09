@@ -14,6 +14,8 @@ import java.io.IOException;
 import static Hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utilities.ApiUtils.getRequest;
+import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveRegistrantDataApi;
 
 public class US01ApiRegistrantStepDefs {
@@ -21,6 +23,7 @@ public class US01ApiRegistrantStepDefs {
     Registrant registrant=new Registrant();
     Faker faker=new Faker();
     Response response;
+    Registrant []registrants;
 
 
     @Given("user sets the necessary path params")
@@ -76,7 +79,7 @@ public class US01ApiRegistrantStepDefs {
 
     }
 
-
+//=========================================================================================================
 
 
     String endpoint;
@@ -96,16 +99,9 @@ public class US01ApiRegistrantStepDefs {
         registrant.setPassword(password);
     }
 
-
     @Given("user makes a GET request and gets the response")
     public void user_makes_a_get_request_and_gets_the_response() {
-        response=given().headers("Authorization",
-                "Bearer "+ ConfigurationReader.getProperty("token"),
-                "Content-Type",
-                ContentType.JSON,
-                "Accept",
-                ContentType.JSON).
-                when().get(endpoint);
+        response=getRequest(generateToken(),endpoint);
     }
 
     @Then("user validates registrant information using api")
@@ -116,15 +112,39 @@ public class US01ApiRegistrantStepDefs {
         ObjectMapper obj=new ObjectMapper();
         Registrant actualRegistrant=obj.readValue(response.asString(),Registrant.class);
 
-//        System.out.println(registrant.getFirstName());
-//        System.out.println(actualRegistrant.getFirstName());
-
         assertEquals(registrant.getFirstName(),actualRegistrant.getFirstName());
         assertEquals(registrant.getLastName(),actualRegistrant.getLastName());
         assertEquals(registrant.getSsn(),actualRegistrant.getSsn());
         assertEquals(registrant.getLogin(),actualRegistrant.getLogin());
         assertEquals(registrant.getEmail(),actualRegistrant.getEmail());
+
     }
+
+//====================================================================================================
+
+    @Given("user sends the get request for users data")
+    public void user_sends_the_get_request_for_users_data() {
+        response = getRequest(generateToken(),ConfigurationReader.getProperty("registrant_endpoint"));
+    }
+
+    @Given("user deserializes data to Java")
+    public void user_deserializes_data_to_java() throws Exception {
+        ObjectMapper obj=new ObjectMapper();
+        registrants = obj.readValue(response.asString(), Registrant[].class);
+        // this loop can give us a specific field if we want
+//        for (int i=0; i< registrants.length; i++){
+//            System.out.println("name"+registrants[i].getFirstName());
+//        }
+    }
+
+    @Given("user saves the users data to correspondent files")
+    public void user_saves_the_users_data_to_correspondent_files() {
+
+    }
+
+
+
+
 
 
 

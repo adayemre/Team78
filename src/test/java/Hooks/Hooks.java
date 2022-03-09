@@ -12,11 +12,12 @@ import utilities.Driver;
 
 public class Hooks {
 
-    @Before
-    public void setUp(){
-    }
-
     public static RequestSpecification spec;
+
+    @Before(value = "@ApiRegistrant")
+    public void setUp(){
+        spec=new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
+    }
 
     @Before( value = "@ApiPostRegistrant")
     public void setup(){

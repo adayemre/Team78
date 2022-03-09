@@ -13,7 +13,7 @@ Feature: Registrant api test
     |firstname|lastname|SSN        |email            |username |password |lan|
     |Stephan  |Taylor  |215-83-1456|stephan@gmail.com|s.taylor |123T45as?|Eng|
 
-
+  @ApiRegistrant
   Scenario Outline: TC08 user should get all registrant information using Api and validate them
     Given user sets the endpoint to get user info with "<SSN>"
     And user sets the expected data as "<firstname>" "<lastname>" "<SSN>" "<email>" "<username>" "<password>"
@@ -30,5 +30,12 @@ Feature: Registrant api test
     |Leslie   |Collins  |784-87-3883|elois.von@gmail.com        |theda.goyette  |iN1IYMN9fDgs4J    |
     |Myrtie   |Larkin   |164-07-3409|sharon.abshire@hotmail.com |david.schneider|kOwt5lz*A#Lt      |
     |Laraine  |Jenkins  |531-36-5815|ewa.roberts@hotmail.com    |nick.stracke   |^FF@58KYI0        |
+
+
+  Scenario: api get request for users
+    Given user sends the get request for users data
+    And user deserializes data to Java
+    And user saves the users data to correspondent files
+
 
 
