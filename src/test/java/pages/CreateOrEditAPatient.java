@@ -39,8 +39,6 @@ public class CreateOrEditAPatient {
     public WebElement savedPatientStaff;
     @FindBy(xpath = "//*[@id='app-view-container']/div")
     public WebElement savedPatientAdmin;
-   // @FindBy(className = "Toastify__toast-container Toastify__toast-container--top-left toastify-container")
-   // public WebElement saveSuccesAlert;
 
 
 

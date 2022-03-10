@@ -1,9 +1,10 @@
-package stepdefinitions;
+package stepdefinitions.uisteps;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +12,11 @@ import org.openqa.selenium.support.ui.Select;
 import pages.*;
 import utilities.Driver;
 
+import static Hooks.Hooks.spec;
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertTrue;
+
 public class US_09_StepDefs {
-    WebDriver driver;
     SignInPage signInPage=new SignInPage();
     StaffFunctions staffFunctions =new StaffFunctions();
     SignOut signOut=new SignOut();
@@ -53,7 +57,7 @@ public class US_09_StepDefs {
 
     @Then("verify patient informations are visable")
     public void verify_patient_informations_are_visable() {
-        Assert.assertTrue(staffFunctions.patientId.isDisplayed());
+        assertTrue(staffFunctions.patientId.isDisplayed());
     }
 
     @Then("sign out")
@@ -97,9 +101,9 @@ public class US_09_StepDefs {
     public void edit_the_patient_informations_and_click_on_save_button() throws InterruptedException {
         Driver.waitAndClick(createOrEditAPatient.firstNameBox);
         createOrEditAPatient.firstNameBox.clear();
-    createOrEditAPatient.firstNameBox.sendKeys(faker.name().firstName());
+    createOrEditAPatient.firstNameBox.sendKeys("John");
         createOrEditAPatient.lastNameBox.clear();
-    createOrEditAPatient.lastNameBox.sendKeys(faker.name().lastName());
+    createOrEditAPatient.lastNameBox.sendKeys("Doe");
 
     Driver.waitAndClick(createOrEditAPatient.birthDateBox);
     createOrEditAPatient.birthDateBox.clear();
@@ -114,9 +118,9 @@ public class US_09_StepDefs {
     Driver.waitAndSendText(createOrEditAPatient.birthDateBox, "01.01.0020001212A");
 
     createOrEditAPatient.eMailBox.clear();
-    createOrEditAPatient.eMailBox.sendKeys(faker.internet().emailAddress());
+    createOrEditAPatient.eMailBox.sendKeys("john@doe.com");
     createOrEditAPatient.phoneNumberBox.clear();
-    createOrEditAPatient.phoneNumberBox.sendKeys("1111111111");
+    createOrEditAPatient.phoneNumberBox.sendKeys("1234567890");
     Select selectGender=new Select(createOrEditAPatient.genderDropDown);
     selectGender.selectByIndex(0);
     Select selectBlood=new Select(createOrEditAPatient.bloodGroupDropDown);
@@ -139,9 +143,13 @@ public class US_09_StepDefs {
 
     @Then("verify patient informations are updated")
     public void verify_patient_informations_are_updated() {
-       // Assert.assertEquals(createOrEditAPatient.savedPatient.getText(),"Patient");
 
-        Assert.assertTrue(createOrEditAPatient.savedPatientStaff.isDisplayed());
+        assertTrue(createOrEditAPatient.savedPatientStaff.isDisplayed());
+    }
+
+    @Then("verify patient informations are updated as Admin")
+    public void verifyPatientInformationsAreUpdatedAsAdmin() {
+        assertTrue(createOrEditAPatient.savedPatientAdmin.isDisplayed());
     }
 
 
@@ -156,7 +164,7 @@ public class US_09_StepDefs {
 
     @Then("verify the patient informations are  invoked")
     public void verify_the_patient_informations_are_invoked() {
-        Assert.assertTrue(staffFunctions.searchResult.isDisplayed());
+        assertTrue(staffFunctions.searchResult.isDisplayed());
     }
 
 
@@ -173,23 +181,27 @@ public class US_09_StepDefs {
 
     @Then("verify patient is deleted")
     public void verify_patient_is_deleted() {
-       //
+        String pageSource = Driver.getDriver().getPageSource();
+        boolean result = pageSource.contains("");
+        assertTrue(result == false);
+
+
     }
 
     @Then("verify Delete button is not dispalyed")
     public void verify_delete_button_is_not_dispalyed() {
-        //
+
+       //
+
+
     }
 
 
     @Then("verify Patient Search Box is not visiable")
     public void verify_patient_search_box_is_not_visiable() {
-        //
+        String pageSource = Driver.getDriver().getPageSource();
+        boolean result = pageSource.contains("Search");
+        assertTrue(result == false);
     }
 
-
-    @Then("verify patient informations are updated as Admin")
-    public void verifyPatientInformationsAreUpdatedAsAdmin() {
-        Assert.assertTrue(createOrEditAPatient.savedPatientAdmin.isDisplayed());
-    }
 }

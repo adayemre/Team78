@@ -17,7 +17,7 @@ public class AdminFunctions {
     public WebElement viewButton;
     @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/div[1]/div/table/tbody/tr/td[16]/div/a[2]/span/span")
     public WebElement editButton;
-    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[16]/div/a[3]")
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/div[1]/div/table/tbody/tr/td[16]/div/a[3]/span/span")
     public WebElement deleteButton;
     @FindBy(xpath = "//*[@id='jhi-confirm-delete-patient']/span")
     public WebElement confirmDelete;

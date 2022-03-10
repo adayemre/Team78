@@ -1,0 +1,9 @@
+Registrant{ssn='693-77-0332', firstname='Aleta', lastname='Kulas', username='clifton.bechtelar', email='reginald.boehm@hotmail.com', password='0a#I08^y%8', lan='en'}
+Registrant{ssn='517-82-3747', firstname='Almeta', lastname='White', username='elodia.daniel', email='sharita.dickinson@gmail.com', password='C0K#&EJ5n1*', lan='en'}
+Registrant{firstName='Lashanda', lastName='Bednar', ssn='159-99-3148', login='val.luettgen', langKey='en', password='e4iJ5HRB', email='deedee.connelly@hotmail.com'}
+Registrant{firstName='Teri', lastName='Strosin', ssn='827-58-5728', login='lanita.rodriguez', langKey='en', password='NFG!8WbMGs*7', email='tanya.doyle@hotmail.com'}
+Registrant{firstName='Walter', lastName='Kshlerin', ssn='354-55-8402', login='morgan.simonis', langKey='en', password='$Xb@wpS0*lLe', email='alphonse.fisher@gmail.com'}
+Registrant{firstName='Rhea', lastName='Wintheiser', ssn='621-07-0033', login='glinda.koepp', langKey='en', password='h7GXqPh00', email='alvaro.blick@yahoo.com'}
+Registrant{firstName='Glynda', lastName='Fisher', ssn='579-23-4248', login='ludie.kautzer', langKey='en', password='rgj*dD0ZL&&o%!', email='arlena.heathcote@gmail.com'}
+Registrant{firstName='Aldo', lastName='Kshlerin', ssn='529-97-5409', login='AldoKshlerin', langKey='null', password='5TA6cZ#Z!UxHs80k%', email='adam.schultz@gmail.com'}
+Registrant{firstName='Lynwood', lastName='Hamill', ssn='613-55-7026', login='hank.greenholt', langKey='en', password='4@EdWoWBa', email='orville.lesch@yahoo.com'}
