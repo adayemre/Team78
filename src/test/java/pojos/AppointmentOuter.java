@@ -25,13 +25,15 @@ public class AppointmentOuter {
 
     private AppointmentMiddle patient;
     private String startDate;
+    private Integer id;
 
     public AppointmentOuter() {
     }
 
-    public AppointmentOuter(AppointmentMiddle patient, String startDate) {
+    public AppointmentOuter(AppointmentMiddle patient, String startDate, int id) {
         this.patient = patient;
         this.startDate = startDate;
+        this.id = id;
     }
 
     public AppointmentMiddle getPatient() {
@@ -50,12 +52,21 @@ public class AppointmentOuter {
         this.startDate = startDate;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
 
     @Override
     public String toString() {
         return "AppointmentOuter{" +
                 "patient=" + patient +
                 ", startDate='" + startDate + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

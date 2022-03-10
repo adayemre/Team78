@@ -27,15 +27,13 @@ public class AppointmentCreationStepDefs {
 
     AppointmentMiddle appointmentCreationAPI = new AppointmentMiddle();
     Response response;
-//    AppointmentMiddle appointmentList [];
-    AppointmentOuter appointmentOuterList [];
-
-
+    //    AppointmentMiddle appointmentList [];
+    AppointmentOuter appointmentOuterList[];
 
 
     @Given("user sets the necessary path params for appointment creation")
     public void user_sets_the_necessary_path_params_for_appointment_creation() {
-        spec.pathParams("first", "api", "second", "appointments","third","request");
+        spec.pathParams("first", "api", "second", "appointments", "third", "request");
     }
 
 
@@ -51,13 +49,10 @@ public class AppointmentCreationStepDefs {
     }
 
 
-
-
     @Given("user sends the POST request and gets the response for appointment creation")
     public void user_sends_the_post_request_and_gets_the_response_for_appointment_creation() {
         response = given().spec(spec).contentType(ContentType.JSON).body(appointmentCreationAPI).when().post("/{first}/{second}/{third}");
     }
-
 
 
     @When("user saves the appointment records to correspondent files")
@@ -78,10 +73,10 @@ public class AppointmentCreationStepDefs {
 //        assertEquals(appointmentCreationAPI.getLastName(),actualAppointment.getPatient().getLastName());
 //        assertEquals(appointmentCreationAPI.getSsn(),actualAppointment.getPatient().getUser().getSsn());
 
-        Map<String,Object> actualData = response.as(HashMap.class);
+        Map<String, Object> actualData = response.as(HashMap.class);
 
-        assertEquals(appointmentCreationAPI.getFirstName(),((Map)actualData.get("patient")).get("firstName"));
-        assertEquals(appointmentCreationAPI.getSsn(),((Map)((Map)actualData.get("patient")).get("user")).get("ssn"));
+        assertEquals(appointmentCreationAPI.getFirstName(), ((Map) actualData.get("patient")).get("firstName"));
+        assertEquals(appointmentCreationAPI.getSsn(), ((Map) ((Map) actualData.get("patient")).get("user")).get("ssn"));
 
 //        assertEquals(appointmentCreationAPI.getLastName(),actualAppointment.getPatient().getLastName());
 //        assertEquals(appointmentCreationAPI.getSsn(),actualAppointment.getPatient().getUser().getSsn());
@@ -103,7 +98,7 @@ public void userSendsTheGetRequestAndGetsTheResponse() {
     //GET REQUEST
     @Given("user sends the get request for appointments data")
     public void user_sends_the_get_request_for_appointments_data() {
-        response = getRequest(generateToken(),ConfigurationReader.getProperty("appointments_endpoint"));
+        response = getRequest(generateToken(), ConfigurationReader.getProperty("appointments_endpoint"));
 
 //        This can be used for get request
 //        response = given().headers(
@@ -126,13 +121,17 @@ public void userSendsTheGetRequestAndGetsTheResponse() {
 //            System.out.println("name" + appointmentList[i].getFirstName());
 //        }
 //165. ve 225. 229. appointment da sıkıntı var Null Pointer veriyor
-        appointmentOuterList = obj.readValue(response.asString(),AppointmentOuter[].class);
+        appointmentOuterList = obj.readValue(response.asString(), AppointmentOuter[].class);
         System.out.println(appointmentOuterList.length);
-        for(int i = 0; i < 165; i++){
-            System.out.println("name: " +i+ appointmentOuterList[i].getPatient().getUser().getLastName());
+        for (int i = 0; i < appointmentOuterList.length; i++) {
+            if (appointmentOuterList[i].getId() != null) {
+//                continue;
+//            }
+            System.out.println("Id: " + i + "**"  + appointmentOuterList[i].getPatient());
         }
     }
 
+}
 
     @Given("user saves the users data to correspondent files for appointments")
     public void user_saves_the_users_data_to_correspondent_files_for_appointments() {
