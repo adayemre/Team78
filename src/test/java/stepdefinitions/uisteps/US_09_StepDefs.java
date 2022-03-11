@@ -156,6 +156,7 @@ public class US_09_StepDefs {
     @Then("enter a valid SSN ID in the Patients search box")
     public void enter_a_valid_ssn_id_in_the_patients_search_box() throws InterruptedException {
 
+        Driver.waitAndClick(staffFunctions.searchBox);
         staffFunctions.searchBox.click();
         Thread.sleep(3);
         staffFunctions.searchBox.sendKeys("319-04-4812");
@@ -181,8 +182,8 @@ public class US_09_StepDefs {
 
     @Then("verify patient is deleted")
     public void verify_patient_is_deleted() {
-        String pageSource = Driver.getDriver().getPageSource();
-        boolean result = pageSource.contains("");
+        boolean result = Driver.getDriver().getPageSource().contains("deleted");
+      //  boolean result = pageSource.contains("deleted");
         assertTrue(result == false);
 
 
@@ -190,8 +191,9 @@ public class US_09_StepDefs {
 
     @Then("verify Delete button is not dispalyed")
     public void verify_delete_button_is_not_dispalyed() {
-
-       //
+        String pageSource = Driver.getDriver().getPageSource();
+        boolean result = pageSource.contains("delete");
+        assertTrue(result == false);
 
 
     }

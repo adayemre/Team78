@@ -11,15 +11,16 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class Hooks {
+    @Before
+    public void setUp(){
 
-    //
+    }
+
     public static RequestSpecification spec;
 
-    @Before( value = "@ApiPatientInfo")
+    @Before
     public void setup(){
-
         spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
-
 
     }
 

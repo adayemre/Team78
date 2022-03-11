@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utilities.Authentication.generateToken;
 
 public class PatientInfoStepDefs {
     Response response;
@@ -18,11 +19,11 @@ public class PatientInfoStepDefs {
     @When("set the Base Url")
     public void set_the_base_url() {
         RequestSpecification spec=new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
-        spec.pathParams("1","api","2","patients","3",4858);
+        spec.pathParams("1","api","2","patients","3",4860);
     }
     @When("send the GET request and get the response")
     public void send_the_get_request_and_get_the_response() {
-        response = given().headers("Authorization", "Bearer " +ConfigurationReader.getProperty("token"),
+        response = given().headers("Authorization", "Bearer " +generateToken(),
                         "Content-Type", ContentType.JSON, "Accept", ContentType.JSON).when().
                 get(ConfigurationReader.getProperty("patient_endpoint"));
     }

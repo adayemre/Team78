@@ -29,7 +29,7 @@ public class DatabaseUtility {
         createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
 
 
-        System.out.println(getColumnData("Select * FROM jhi_persistent_audit_evt_data", "event_id"));
+        System.out.println(getColumnData ("Select * FROM patient", "email"));
 
         closeConnection();
 

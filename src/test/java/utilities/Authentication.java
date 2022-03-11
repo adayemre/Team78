@@ -3,7 +3,6 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,9 @@ import static Hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 
 public class Authentication {
-    static RequestSpecification spec;
+
+
+
     public static String generateToken(){
 
         //Set the base url
@@ -22,8 +23,8 @@ public class Authentication {
         //Set the expected data
 
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("username", "staffrecep");
-        expectedData.put("password", "123Recep");
+        expectedData.put("username", "admin79");
+        expectedData.put("password", "admin");
         expectedData.put("rememberMe","true" );
 
         //Send the Post request and get the data
