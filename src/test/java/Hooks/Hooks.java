@@ -34,7 +34,15 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_appointment_url"));
     }
 
+    @Before( value = "@AppointmentPostApi")
+    public void postAppointmentSetup(){
+        spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
+    }
 
+    @Before( value = "@AppointmentGetApi")
+    public void getAppointmentSetup(){
+        spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
+    }
 
 
     @After

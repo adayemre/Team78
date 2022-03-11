@@ -1,13 +1,12 @@
 package stepdefinitions.api_stepdefs;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.Registrant;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import utilities.ConfigurationReader;
 
 import java.io.IOException;
 
@@ -23,7 +22,7 @@ public class US01ApiRegistrantStepDefs {
     Registrant registrant=new Registrant();
     Faker faker=new Faker();
     Response response;
-    Registrant []registrants;
+    String endpoint;
 
 
     @Given("user sets the necessary path params")
@@ -82,7 +81,7 @@ public class US01ApiRegistrantStepDefs {
 //=========================================================================================================
 
 
-    String endpoint;
+
 
     @Given("user sets the endpoint to get user info with {string}")
     public void user_sets_the_endpoint_to_get_user_info_with(String ssn) {
@@ -107,7 +106,6 @@ public class US01ApiRegistrantStepDefs {
     @Then("user validates registrant information using api")
     public void user_validates_registrant_information_using_api() throws IOException {
         response.then().statusCode(200);
-        response.prettyPrint();
 
         ObjectMapper obj=new ObjectMapper();
         Registrant actualRegistrant=obj.readValue(response.asString(),Registrant.class);
@@ -119,12 +117,6 @@ public class US01ApiRegistrantStepDefs {
         assertEquals(registrant.getEmail(),actualRegistrant.getEmail());
 
     }
-
-//====================================================================================================
-
-
-
-
 
 
 

@@ -8,3 +8,4 @@ Registrant{firstName='Oren', lastName='Borer', ssn='887-82-9699', login='booker.
 Registrant{firstName='Lucille', lastName='Langosh', ssn='624-82-1136', login='robbie.bednar', langKey='null', password='hslR5B4A9rL6zqtJ', email='yolonda.cremin@hotmail.com'}
 Registrant{firstName='Chun', lastName='Leannon', ssn='336-96-5589', login='hilario.wisozk', langKey='null', password='l@!j^2tE53P', email='genaro.dickens@hotmail.com'}
 Registrant{firstName='Kevin', lastName='Cormier', ssn='456-68-1695', login='shanelle.huels', langKey='null', password='teo@O0um', email='elke.fahey@gmail.com'}
+Registrant{firstName='Gerardo', lastName='Hermann', ssn='275-03-5223', login='felix.bernier', langKey='null', password='1@5jEb6PK*Ishmn$PAJ', email='adrian.bashirian@hotmail.com'}

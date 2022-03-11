@@ -13,3 +13,4 @@ Registrant{firstName='Jewell', lastName='Feil', ssn='116-55-7437', login='kately
 Registrant{firstName='Joshua', lastName='Howe', ssn='132-11-6205', login='arron.heller', langKey='Eng', password='Xe48bRyL$$e', email='melanie.bruen@gmail.com'}
 Registrant{firstName='Melda', lastName='Medhurst', ssn='543-45-5100', login='garth.sawayn', langKey='Eng', password='tuKT@r8NEB', email='cecila.raynor@gmail.com'}
 Registrant{firstName='Quyen', lastName='Spinka', ssn='876-09-7590', login='nellie.adams', langKey='Eng', password='ZZ0CnS*J&UcUsZ', email='doyle.parisian@gmail.com'}
+Registrant{firstName='Seema', lastName='Abshire', ssn='712-78-5010', login='alva.anderson', langKey='Eng', password='$#o#z5h!j', email='damian.cormier@hotmail.com'}
