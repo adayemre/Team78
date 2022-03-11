@@ -137,7 +137,8 @@ public void userSendsTheGetRequestAndGetsTheResponse() {
     @Given("user saves the users data to correspondent files for appointments")
     public void user_saves_the_users_data_to_correspondent_files_for_appointments() {
         response.then().body("id",hasItem(18222));
-//        response.then().body("id",hasItem(20734));
+//        response.then().body("id",hasItem(20734)); //yok diyor
+//        response.then().body("id",hasItem(23273));//db de var apı de cekmiyor
 
     }
 
