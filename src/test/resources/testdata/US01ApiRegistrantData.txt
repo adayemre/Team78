@@ -9,3 +9,7 @@ Registrant{firstName='Toi', lastName='Hahn', ssn='062-62-7523', login='cyril.ter
 Registrant{firstName='Yajaira', lastName='Hessel', ssn='619-13-4215', login='morris.ratke', langKey='Eng', password='d%Grwks!F', email='christopher.bergstrom@gmail.com'}
 Registrant{firstName='Torri', lastName='Rice', ssn='778-21-5746', login='terrence.mraz', langKey='Eng', password='18m1036xr*85T', email='karlene.kshlerin@gmail.com'}
 Registrant{firstName='Jerome', lastName='Pfannerstill', ssn='619-73-0672', login='gala.borer', langKey='Eng', password='69&HgBx!2p2%Ol', email='gonzalo.bernhard@yahoo.com'}
+Registrant{firstName='Jewell', lastName='Feil', ssn='116-55-7437', login='katelyn.roob', langKey='Eng', password='*3da3%4862A', email='norine.glover@gmail.com'}
+Registrant{firstName='Joshua', lastName='Howe', ssn='132-11-6205', login='arron.heller', langKey='Eng', password='Xe48bRyL$$e', email='melanie.bruen@gmail.com'}
+Registrant{firstName='Melda', lastName='Medhurst', ssn='543-45-5100', login='garth.sawayn', langKey='Eng', password='tuKT@r8NEB', email='cecila.raynor@gmail.com'}
+Registrant{firstName='Quyen', lastName='Spinka', ssn='876-09-7590', login='nellie.adams', langKey='Eng', password='ZZ0CnS*J&UcUsZ', email='doyle.parisian@gmail.com'}

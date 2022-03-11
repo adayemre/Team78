@@ -32,10 +32,5 @@ Feature: Registrant api test
     |Laraine  |Jenkins  |531-36-5815|ewa.roberts@hotmail.com    |nick.stracke   |^FF@58KYI0        |
 
 
-  Scenario: api get request for users
-    Given user sends the get request for users data
-    And user deserializes data to Java
-    And user saves the users data to correspondent files
-
 
 

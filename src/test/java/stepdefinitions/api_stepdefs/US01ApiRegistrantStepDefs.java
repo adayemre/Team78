@@ -122,25 +122,6 @@ public class US01ApiRegistrantStepDefs {
 
 //====================================================================================================
 
-    @Given("user sends the get request for users data")
-    public void user_sends_the_get_request_for_users_data() {
-        response = getRequest(generateToken(),ConfigurationReader.getProperty("registrant_endpoint"));
-    }
-
-    @Given("user deserializes data to Java")
-    public void user_deserializes_data_to_java() throws Exception {
-        ObjectMapper obj=new ObjectMapper();
-        registrants = obj.readValue(response.asString(), Registrant[].class);
-        // this loop can give us a specific field if we want
-//        for (int i=0; i< registrants.length; i++){
-//            System.out.println("name"+registrants[i].getFirstName());
-//        }
-    }
-
-    @Given("user saves the users data to correspondent files")
-    public void user_saves_the_users_data_to_correspondent_files() {
-
-    }
 
 
 

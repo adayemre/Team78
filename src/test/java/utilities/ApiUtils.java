@@ -2,6 +2,9 @@ package utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import pojos.AppointmentOuter;
+import pojos.Patient;
 
 import static io.restassured.RestAssured.given;
 
@@ -19,10 +22,10 @@ public class ApiUtils {
                 "Accept",
                 ContentType.JSON).when().get(endpoint);
 
-
         return  response;
 
     }
+
 
 
 
