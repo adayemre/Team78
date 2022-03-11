@@ -9,7 +9,6 @@ Feature: Edit an Appointment
   Scenario Outline: Edit an appointment
 
     Given User provide valid "<username>" and "<password>"
-    And User clicks Sign in button
     And User clicks on My Pages
     And User clicks on My Appointment
     And User Clicks Edit button

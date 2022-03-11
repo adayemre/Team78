@@ -15,8 +15,6 @@ public class DBUtils {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
-
-
     /**
      * DBUtils.createConnection(); -> to connect to teh database
      */
@@ -217,4 +215,3 @@ public class DBUtils {
         return columns;
     }
 }
-

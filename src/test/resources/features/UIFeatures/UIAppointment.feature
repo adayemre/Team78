@@ -1,5 +1,4 @@
 Feature: appointments test
-
   @Appointment
   Scenario Outline: test appointments
     Given user clicks on make an appointment

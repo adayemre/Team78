@@ -11,8 +11,13 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class Hooks {
+    @Before
+    public void setUp(){
 
 
+    }
+
+    //
     public static RequestSpecification spec;
 
     @Before( value = "@ApiRegistrant")
@@ -22,6 +27,7 @@ public class Hooks {
 
 
     }
+
 
     @Before(order = 1, value = "@UIRegistration")
     public void navigateToRegistrationPage(){

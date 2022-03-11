@@ -30,6 +30,12 @@ public class EditAppointmentPage {
     @FindBy (name="diagnosis")
     public WebElement diagnosis;
 
+    @FindBy (name="prescription")
+    public WebElement prescription;
+
+    @FindBy (id="appointment-description")
+    public WebElement description;
+
     @FindBy (id="save-entity")
     public WebElement save;
 

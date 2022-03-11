@@ -1,8 +1,7 @@
 Feature: test all registrant data
 
-
   @SmokeTest
-    @UIRegistration
+  @UIRegistration
   Scenario Outline: test registration
     Given user provides ssn id "<SSN>"
     And  user provides firstname and lastname "<firstname>" and "<lastname>"
@@ -25,6 +24,5 @@ Feature: test all registrant data
       |asdfgkdjs|1      |
       |asdfgkdjs?|2    |
       |asdhgsag?1|3    |
-
 
 
