@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static utilities.Authentication.generateToken;
 
-public class PatientInfoStepDefs {
+public class US_09_API_StepDefs {
     Response response;
     Map<String,Object> expectedData;
     @When("set the Base Url")

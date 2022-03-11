@@ -1,4 +1,4 @@
-@US_09
+@UI_US_09 @Smoke
 Feature:  View, edit and delete Patient information, Validate them using API and DB
   Background: User goes to homepage
     Given Go to medunna.com homepage
