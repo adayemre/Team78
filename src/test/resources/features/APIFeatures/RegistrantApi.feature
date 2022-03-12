@@ -12,10 +12,9 @@ Feature: Registrant api test
       |Recep    |Aykurt  |293-38-2938|recep@gmail.com|recepaykurt|Recep123.|en|
 
   @ApiRegistrant
-  Scenario:  api get request for users
+  Scenario: api get request for users
     Given user sends the get request for users data
     And user deserializes data to Java
-    And user saves the users data to correspondent files
+    And user saves the data records to correspondent files
 
-
-
+    #As an adimn i should retrieve all staff data

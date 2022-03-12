@@ -1,8 +1,8 @@
 @US_0011
-  Feature: Visibility of Appointment
+  Feature: Visibility_of_Appointment
 
     @TC_0002
-    Scenario: Visibility of Appointment
+    Scenario: Visibility_of_Appointment
 
       Given User on the home page
       And User navigate on login page

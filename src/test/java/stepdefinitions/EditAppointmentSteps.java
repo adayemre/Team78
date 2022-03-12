@@ -30,6 +30,10 @@ public class EditAppointmentSteps {
         signInPage.username.sendKeys(username);
         signInPage.password.sendKeys(password);
     }
+    @And("User clicks Sign in")
+    public void userClicksSignIn() {
+        Driver.waitAndClick(signInPage.signIn);
+    }
     @And("User clicks on My Pages")
     public void userClicksOnMyPages() {
         Driver.waitAndClick(editAppointmentPage.mypages);

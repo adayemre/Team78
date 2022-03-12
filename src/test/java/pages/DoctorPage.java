@@ -29,13 +29,12 @@ public class DoctorPage {
     public WebElement DefaultMinValue;
     @FindBy (xpath="//th[@class='hand'][5]")
     public WebElement DefaultMaxValue;
-    @FindBy (xpath="//")//there is a bug. There is no xpath in Web page It needs "class='hand' "
+    @FindBy (xpath="//table/thead/tr/th[6]")
     public WebElement Test;
     @FindBy (xpath="//th[@class='hand'][6]")
     public WebElement Description;
     @FindBy (xpath="//th[@class='hand'][7]")
     public WebElement Date;
-
 
     @FindBy (xpath="//tbody/tr/td[1][1]")
     public WebElement IdColumn;
@@ -59,5 +58,4 @@ public class DoctorPage {
 
     @FindBy (xpath = "//a[@href='/logout']")
     public WebElement signout;
-
 }

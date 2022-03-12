@@ -14,7 +14,7 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class DoctorRequestTestResultImpatientSteps {
+public class DoctorRequestTestResultInpatientSteps {
 
     DoctorPage doctorPage = new DoctorPage();
     HomePage homePage = new HomePage();

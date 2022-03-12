@@ -1,14 +1,15 @@
 @US_0011
-Feature: Edit an Appointment
+Feature: Edit_An_Appointment
 
   Background:
     Given User is on home page
     And User navigate to login page
 
   @TC_0001
-  Scenario Outline: Edit an appointment
+  Scenario Outline: Edit_An_Appointment
 
     Given User provide valid "<username>" and "<password>"
+    And User clicks Sign in
     And User clicks on My Pages
     And User clicks on My Appointment
     And User Clicks Edit button

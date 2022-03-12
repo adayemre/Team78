@@ -1,12 +1,12 @@
 @US_0011
-Feature: Prescription and Description Optional
+Feature: Prescription_and_Description_Optional
 
   Background:
     Given Users on home page
     And Users navigate to login
 
   @TC_0004
-  Scenario Outline: Optional part
+  Scenario Outline: Prescription_and_Description_Optional
 
     Given Users are providing valid "<username>" and "<password>"
     And Users are clicking Sign in button

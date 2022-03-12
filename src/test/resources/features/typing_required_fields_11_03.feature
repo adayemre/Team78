@@ -1,12 +1,12 @@
 @US_0011
-Feature: Type Required Fields
+Feature: Type_Required_Fields
 
   Background:
     Given User on home page
     And User navigate to login
 
   @TC_0003
-  Scenario Outline: Edit an appointment
+  Scenario Outline: Type_Required_Fields
 
     Given User is providing valid "<username>" and "<password>"
     And User is clicking Sign in button

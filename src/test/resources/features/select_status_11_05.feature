@@ -1,12 +1,12 @@
 @US_0011
-Feature: Select Status
+Feature: Select_Status_Part
 
   Background:
     Given user on home page
     And user navigate to login
 
   @TC_0005
-  Scenario Outline: Selected part
+  Scenario Outline: Select_Status_Part
 
     Given Users providing valid "<username>" and "<password>"
     And Users clicking Sign in button
