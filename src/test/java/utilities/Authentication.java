@@ -36,5 +36,23 @@ public class Authentication {
     }
 
 
+    public static String generateToken2(){
+        //Set the base url
+        //api/authenticate
+        spec.pathParams("first", "api", "second", "authenticate");
+        //Set the expected data
+        Map<String, Object> expectedData = new HashMap<>();
+        expectedData.put("username", "jo");
+        expectedData.put("password", "789456123");
+        expectedData.put("rememberMe","true" );
+        //Send the Post request and get the data
+        Response response = given().spec(spec).contentType(ContentType.JSON).
+                body(expectedData).when().post("/{first}/{second}");
+        response.prettyPrint();
+        JsonPath json = response.jsonPath();
+        return json.getString("id_token");
+    }
+
+
 
 }

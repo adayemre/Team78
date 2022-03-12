@@ -92,6 +92,7 @@ public class US01UIRegistrationStepDefs {
 
     @Then("user verifies the error message as {string}")
     public void user_verifies_the_error_message_as(String string) {
+        Driver.wait(2);
         Assert.assertTrue(registrationPage.errorMessage.getText().contains(string));
     }
 

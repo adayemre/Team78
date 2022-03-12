@@ -1,9 +1,6 @@
 package utilities;
 
-import pojos.Appointment;
-import pojos.AppointmentOuter;
-import pojos.Patient;
-import pojos.Registrant;
+import pojos.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -31,7 +28,7 @@ public class WriteToTxt {
 
     public static void saveRegistrantDataApi(Registrant registrant) {
         try {
-            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("api_registrant_data"), true);
+            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("US01api_registrant_data"), true);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             writer.append(registrant+"\n");
 
@@ -43,6 +40,19 @@ public class WriteToTxt {
     }
 
 
+
+    public static void saveAppointData(AppointmentBT appointment){
+        try{
+            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_records"), true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            writer.append(appointment+"\n");
+
+            writer.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public static void saveAppointData(Appointment appointment){
         try{
@@ -56,6 +66,7 @@ public class WriteToTxt {
             e.printStackTrace();
         }
     }
+
 
     public static void saveAppointmentOuterData(AppointmentOuter appointment){
         try{
