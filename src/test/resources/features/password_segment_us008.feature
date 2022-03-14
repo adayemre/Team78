@@ -18,6 +18,19 @@ Feature: password_segment_us008
 
   @new_password_confirmed
   Scenario Outline: New_Password_Confirmed
+    When user launches the browser
+    And user navigates to home page
+    And user verifies home page is visible
+    And user clicks account_menu
+    And user clicks sign_in_menu
+    Then user verifies sign_in_title
+    And user enter username as "userrecep"
+    And user enter password as "123Recep"
+    And user clicks sign_in_button
+    Then user verifies name is visible on homepage
+    And user clicks account_menu
+    And user clicks password_menu
+    And user verifies password for username title
     And user enter current password as "<currentPassword>"
     And user enter new password as "<newPassword>"
     And user enter password confirmation as "<confirmationPassword>"
@@ -92,6 +105,19 @@ Feature: password_segment_us008
 
   @for_password_not_match
   Scenario Outline: For_Password_Not_Match
+    When user launches the browser
+    And user navigates to home page
+    And user verifies home page is visible
+    And user clicks account_menu
+    And user clicks sign_in_menu
+    Then user verifies sign_in_title
+    And user enter username as "userrecep"
+    And user enter password as "123Recep"
+    And user clicks sign_in_button
+    Then user verifies name is visible on homepage
+    And user clicks account_menu
+    And user clicks password_menu
+    And user verifies password for username title
     And user enter current password as "<currentPassword>"
     And user enter new password as "<newPassword>"
     And user enter password confirmation as "<confirmationPassword>"
@@ -118,6 +144,19 @@ Feature: password_segment_us008
 
   @for_password_not_changed
   Scenario Outline: For_Password_Not_Changed
+    When user launches the browser
+    And user navigates to home page
+    And user verifies home page is visible
+    And user clicks account_menu
+    And user clicks sign_in_menu
+    Then user verifies sign_in_title
+    And user enter username as "userrecep"
+    And user enter password as "123Recep"
+    And user clicks sign_in_button
+    Then user verifies name is visible on homepage
+    And user clicks account_menu
+    And user clicks password_menu
+    And user verifies password for username title
     And user enter current password as "<currentPassword>"
     And user enter new password as "<newPassword>"
     And user enter password confirmation as "<confirmationPassword>"

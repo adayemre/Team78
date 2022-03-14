@@ -23,7 +23,7 @@ public class Registration_Password_US003_StepDefs {
 
     @When("user navigates to home page")
     public void user_navigates_to_home_page() {
-        Driver.getDriver().navigate().to(ConfigurationReader.getProperty("gmi_login_url"));
+        Driver.getDriver().navigate().to(ConfigurationReader.getProperty("medunna_login_url"));
     }
 
     @When("user verifies home page is visible")

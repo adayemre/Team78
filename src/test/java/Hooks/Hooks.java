@@ -10,6 +10,8 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
+import static utilities.DatabaseUtility.createConnection;
+
 public class Hooks {
 
     public static RequestSpecification spec;
@@ -43,6 +45,14 @@ public class Hooks {
     public void setUpApi2(){
         spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
     }
+
+    @Before(value = "@EndToEnd")
+    public void createNewDBConnection(){
+
+        createConnection(ConfigurationReader.getProperty("db_credentials_url"),ConfigurationReader.getProperty("db_username"),ConfigurationReader.getProperty("db_password"));
+    }
+
+
 
     @After
     public void tearDown(Scenario scenario){
