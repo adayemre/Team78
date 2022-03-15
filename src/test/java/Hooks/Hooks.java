@@ -19,7 +19,6 @@ public class Hooks {
     @Before
     public void setUp(){
 
-
     }
 
     @Before(order = 1, value = "@UIRegistration")
@@ -45,6 +44,12 @@ public class Hooks {
     public void setUpApi2(){
         spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
     }
+
+    @Before(value = "@US015_CreateEditPatient")
+    public void setUpUS015(){
+        spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
+    }
+
 
     @Before(value = "@EndToEnd")
     public void createNewDBConnection(){
