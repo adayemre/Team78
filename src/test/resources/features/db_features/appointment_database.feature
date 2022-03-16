@@ -10,4 +10,4 @@ Feature: appointment database validation
     Examples: test data
       | id    |
       | 18222 |
-      | 23273 |
+#      | 23273 |

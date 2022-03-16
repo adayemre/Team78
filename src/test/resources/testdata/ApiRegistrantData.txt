@@ -1,2 +1,13 @@
 Registrant{firstName='Romana', lastName='Schultz', ssn='664-23-1385', login='julio.hessel', langKey='en', password='Fu7n%6fg', email='oscar.morissette@hotmail.com'}
 Registrant{firstName='Michael', lastName='Buckridge', ssn='569-26-6419', login='deana.sauer', langKey='en', password='P2!NA0h$d5!p', email='vance.orn@yahoo.com'}
+Registrant{firstName='Phillip', lastName='Jacobs', ssn='820-43-3945', login='PhillipJacobs', langKey='null', password='1YpM&9##^d', email='gustavo.tromp@gmail.com'}
+Registrant{firstName='Miyoko', lastName='Zboncak', ssn='367-59-8991', login='MiyokoZboncak', langKey='null', password='%w36Yzycsr', email='normand.monahan@hotmail.com'}
+Registrant{firstName='Robbi', lastName='Swaniawski', ssn='359-09-6725', login='RobbiSwaniawski', langKey='null', password='Xbs8GSB9MwOm$UY', email='tenesha.thompson@gmail.com'}
+Registrant{firstName='Julianne', lastName='Cormier', ssn='643-24-9262', login='JulianneCormier', langKey='null', password='j$*X6T$1K', email='michel.herzog@yahoo.com'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null'}

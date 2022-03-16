@@ -8,6 +8,9 @@ import pages.RegistrationPage;
 import pojos.Registrant;
 import utilities.Driver;
 
+import java.util.List;
+
+import static utilities.ReadTxt.getSSNIDs;
 import static utilities.WriteToTxt.saveRegistrantData;
 
 public class RegistrationSteps {
@@ -20,8 +23,8 @@ public class RegistrationSteps {
     @Given("user provides ssn id {string}")
     public void user_provides_ssn_id(String ssn) {
 
-        ssn = faker.idNumber().ssnValid();
-        registrant.setSsn(ssn);
+//        ssn = faker.idNumber().ssnValid();
+//        registrant.setSsn(ssn);
         Driver.waitAndSendText(rp.ssnTextBox,ssn);
 
 
@@ -29,11 +32,11 @@ public class RegistrationSteps {
     @Given("user provides firstname and lastname {string} and {string}")
     public void user_provides_firstname_and_lastname_and(String firstname, String lastname) {
 
-        firstname = faker.name().firstName();
-        lastname = faker.name().lastName();
-
-        registrant.setFirstName(firstname);
-        registrant.setLastName(lastname);
+//        firstname = faker.name().firstName();
+//        lastname = faker.name().lastName();
+//
+//        registrant.setFirstName(firstname);
+//        registrant.setLastName(lastname);
 
         Driver.waitAndSendText(rp.firstnameTextBox,firstname);
         Driver.waitAndSendText(rp.lastnameTextBox,lastname);
@@ -42,23 +45,23 @@ public class RegistrationSteps {
     }
     @Then("user creates username {string}")
     public void user_creates_username(String username) {
-        username = registrant.getFirstName() + registrant.getLastName();
-        registrant.setLogin(username);
+//        username = registrant.getFirstName() + registrant.getLastName();
+//        registrant.setLogin(username);
         Driver.waitAndSendText(rp.usernameTextBox,username);
 
     }
     @Then("user provides also email {string}")
     public void user_provides_also_email(String email) {
 
-        email = faker.internet().emailAddress();
-        registrant.setEmail(email);
+//        email = faker.internet().emailAddress();
+//        registrant.setEmail(email);
         Driver.waitAndSendText(rp.emailTextbox,email);
     }
     @Then("user generates the password {string}")
     public void user_generates_the_password(String password) {
 
-        password = faker.internet().password(8,20, true,true);
-        registrant.setPassword(password);
+//        password = faker.internet().password(8,20, true,true);
+//        registrant.setPassword(password);
         Driver.waitAndSendText(rp.firstPasswordTextBox,password);
         Driver.waitAndSendText(rp.newPasswordTextBox,password);
     }
@@ -89,8 +92,16 @@ public class RegistrationSteps {
         }else if(3 == Integer.parseInt(level)){
             Assert.assertTrue(rp.passwordStrength3.isDisplayed());
         }
-
-
     }
+
+
+
+
+    @Then("user gets DB records and validates the ssn")
+    public void user_gets_db_records_and_validates_the_ssn() {
+        List<String> actualSSNIDs = getSSNIDs();
+        Assert.assertTrue(actualSSNIDs.contains(registrant.getSsn()));
+    }
+
 
 }

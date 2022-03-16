@@ -11,7 +11,6 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement accountMenu;
 
@@ -26,9 +25,6 @@ public class HomePage {
 
     @FindBy(xpath = "//a[@class='appointment-btn scrollto']")
     public WebElement makeAppointmentButton;
-
-
-
 
 
 }

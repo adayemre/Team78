@@ -6,6 +6,7 @@ import pojos.Registrant;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.List;
 
 public class WriteToTxt {
 
@@ -52,6 +53,23 @@ public class WriteToTxt {
         }
 
     }
+
+
+    public static void saveRegistrantData(List<Object> SSNIds){
+        try{
+            //src/resources/testdata/Registrantdata.txt
+            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("database_registrant_data"), false); // her seferinde listeyi bastan getiriyor öncekileri silse iyi olur
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            for(Object eachSSN : SSNIds){
+                writer.append(eachSSN+",\n");
+            }
+            writer.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 
