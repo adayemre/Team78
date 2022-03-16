@@ -1,6 +1,7 @@
 package stepdefinitions.uisteps;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,6 +28,7 @@ public class US_09_StepDefs {
     public void go_to_medunna_com_homepage() {
 
         Driver.getDriver().get("https://www.medunna.com");
+
     }
 
     @When("User signs in as Staff")
@@ -159,7 +161,7 @@ public class US_09_StepDefs {
         Driver.waitAndClick(staffFunctions.searchBox);
         staffFunctions.searchBox.click();
         Thread.sleep(3);
-        staffFunctions.searchBox.sendKeys("319-04-4812");
+        staffFunctions.searchBox.sendKeys("345-34-2323");
 
     }
 
