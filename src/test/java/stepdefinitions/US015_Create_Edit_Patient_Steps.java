@@ -4,6 +4,7 @@ import Pages.US015_Create_Edit_Patient;
 import Pojos.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import org.junit.Assert;
@@ -124,6 +125,7 @@ public class US015_Create_Edit_Patient_Steps {
                         "Accept",
                         ContentType.JSON).
                 spec(spec).body(pojoObject).when().post("/{first}/{second}");
+        response.then().statusCode(201);
     }
 
     @And("user saves the API records with writeToText")
@@ -135,7 +137,7 @@ public class US015_Create_Edit_Patient_Steps {
     public void user_Validate_Patient_Info_With_DB() {
         DatabaseUtility.createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
         String query = "SELECT * FROM patient where email ='"+pojoObject.getEmail()+"'";
-        DatabaseUtility.executeQuery(query);
+        //DatabaseUtility.executeQuery(query);
 
         List<Map<String, Object>> patientInformation = DatabaseUtility.getQueryResultMap(query);
 
@@ -161,22 +163,24 @@ public class US015_Create_Edit_Patient_Steps {
     public void admin_Can_Delete_Any_Patient() {
         Driver.waitAndClick(pageObject.itemsTitlesMenu,2);
         Driver.waitAndClick(pageObject.patientMenuInItems,2);
-        Driver.wait(1);
+        Driver.wait(3);
         Driver.waitAndClick(pageObject.createdDateTitleVerify,2);
-        Driver.wait(1);
+        Driver.wait(3);
 
         for(int i =0; i<pageObject.userInformationInTable.size();i++){
             if(pageObject.userInformationInTable.get(i).getText().equals("adminrecep")){
-                Driver.wait(2);
+                Driver.wait(4);
                 pageObject.deleteButtonInTable.get(i).click();
-                Driver.wait(2);
-                Driver.waitAndClick(pageObject.deleteButtonForAPatient,2);
+                Driver.wait(4);
+                Driver.waitAndClick(pageObject.deleteButtonForAPatient,3);
                 break;
             }else{
-                pageObject.pageNumberGoNext.click();
+                Driver.wait(3);
+                Driver.clickWithJS(pageObject.pageNumberGoNext);
             }
         }
         Driver.wait(2);
         Assert.assertTrue(pageObject.deleteVerifyMessage.isDisplayed());
     }
+
 }

@@ -23,16 +23,12 @@ public class Hooks {
 
     @Before(order = 1, value = "@UIRegistration")
     public void navigateToRegistrationPage(){
-
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
-
     }
 
     @Before(order = 1, value = "@Appointment")
     public void navigateToAppointmentPage(){
-
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_appointment_url"));
-
     }
 
     @Before(value = "@ApiRegistrant")
@@ -50,10 +46,25 @@ public class Hooks {
         spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
     }
 
+    @Before(value = "@PutUserRequest")
+    public void setUpPutRequest(){
+        spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
+    }
+
+    @Before(value = "@DeleteUser")
+    public void setUpDeleteRequest(){
+        spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
+    }
+
+
 
     @Before(value = "@EndToEnd")
     public void createNewDBConnection(){
+        createConnection(ConfigurationReader.getProperty("db_credentials_url"),ConfigurationReader.getProperty("db_username"),ConfigurationReader.getProperty("db_password"));
+    }
 
+    @Before(value = "@DBUsers")
+    public void createDBConnection(){
         createConnection(ConfigurationReader.getProperty("db_credentials_url"),ConfigurationReader.getProperty("db_username"),ConfigurationReader.getProperty("db_password"));
     }
 
@@ -69,7 +80,6 @@ public class Hooks {
 //        }
 
         Driver.closeDriver();
-
     }
 
 }
