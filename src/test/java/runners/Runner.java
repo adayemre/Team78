@@ -14,10 +14,11 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","Hooks"},
-        tags = "@TC_0005",
+        tags = "@physician_appoinments_with_api_secondway",
         dryRun = false
 )
-public class
-Runner {
+public class Runner {
+
+
 }
 
