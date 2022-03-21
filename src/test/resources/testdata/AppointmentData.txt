@@ -1,0 +1,6 @@
+Appointment{firstname='Hollis', lastname='Boyer', ssn='799-52-9304', email='jeannetta.powlowski@yahoo.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
+Appointment{firstname='Solomon', lastname='Waters', ssn='502-91-3036', email='catharine.fahey@yahoo.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
+Appointment{firstname='Vertie', lastname='Davis', ssn='083-87-1926', email='cierra.reichel@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
+Appointment{firstname='Charlena', lastname='Wunsch', ssn='889-71-6053', email='gino.balistreri@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
+Appointment{firstname='Denver', lastname='Vandervort', ssn='011-67-4272', email='jeramy.kling@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
+Appointment{firstname='Reginald', lastname='Jacobi', ssn='062-83-2767', email='moses.mclaughlin@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
