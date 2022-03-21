@@ -180,7 +180,7 @@ public class US_16_StepDefs {
     public void clickOnDeleteButton() throws InterruptedException {
 
         Driver.waitAndClick(rooms.orderByDate);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Driver.waitAndClick(rooms.deleteButton);
     }
 

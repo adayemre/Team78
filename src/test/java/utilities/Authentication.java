@@ -23,8 +23,8 @@ public class Authentication {
         //Set the expected data
 
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("username", "adminrecep");
-        expectedData.put("password", "123Recep");
+        expectedData.put("username", "admin79");
+        expectedData.put("password", "admin");
         expectedData.put("rememberMe","true" );
 
         //Send the Post request and get the data

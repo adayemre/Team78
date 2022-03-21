@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.*;
+import pojos.Registrant;
 import utilities.Driver;
 
 import static Hooks.Hooks.spec;

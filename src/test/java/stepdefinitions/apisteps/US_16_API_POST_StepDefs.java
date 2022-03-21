@@ -34,7 +34,6 @@ public class US_16_API_POST_StepDefs {
       {
     "createdBy": "adminrecep",
     "createdDate": "2022-03-16T09:59:14.677746Z",
-    "id": 30301,
     "roomNumber": 2049,
     "roomType": "DAYCARE",
     "status": true,

@@ -42,9 +42,9 @@ public class US_16_API_PUT_StepDefs {
         expectedData.put("createdBy","adminrecep");
         expectedData.put("createdDate","2022-03-16T10:47:44.686Z");
         expectedData.put("description","Sickness");
-        expectedData.put("id",28483);
+        expectedData.put("id",30338);
         expectedData.put("price",555);
-        expectedData.put("roomNumber",1453);
+        expectedData.put("roomNumber",1239);
         expectedData.put("roomType","TWIN");
         expectedData.put("status",true);
 
