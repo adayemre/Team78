@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 public class DatabaseUtility {
 
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
@@ -23,13 +24,11 @@ public class DatabaseUtility {
         }
     }
 
-
     public static void main(String[] args) {
         createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
         System.out.println(getColumnData("Select * FROM jhi_user", "first_name"));
         closeConnection();
     }
-
 
     public static void createConnection(String url, String user, String password) {
         try {
@@ -111,7 +110,6 @@ public class DatabaseUtility {
         return rowList;
     }
 
-
     /**
      *
      * @param query
@@ -134,12 +132,11 @@ public class DatabaseUtility {
         return rowList;
     }
 
-
     /**
      *
      * @param query
      * @return returns query result in a list of maps where the list represents
-     *         collection of rows and a map represents a single row with
+
      *         key being the column name
      */
     public static List<Map<String, Object>> getQueryResultMap(String query) {
@@ -161,7 +158,6 @@ public class DatabaseUtility {
         }
         return rowList;
     }
-
 
     /**
      *
@@ -185,7 +181,6 @@ public class DatabaseUtility {
         return columns;
     }
 
-
     public static void executeQuery(String query) {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -200,7 +195,6 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
-
 
     public static int getRowCount() throws Exception {
         resultSet.last();
@@ -224,7 +218,6 @@ public class DatabaseUtility {
         }
     }
 
-
     public static int getMaxCountryId (String query,String column){
         int max = 0;
         List<Object> allIds = getColumnData(query, column);
@@ -235,6 +228,7 @@ public class DatabaseUtility {
         }
         return max;
     }
+
 
 
     public static Object getCellValuewithRowsAndCells(String query,int row,int cell) {

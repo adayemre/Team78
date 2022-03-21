@@ -79,6 +79,7 @@ public class WriteToTxt {
         }
     }
 
+
     public static void saveAppointData(Appointment appointment){
         try{
             FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_records"), true);
@@ -115,6 +116,7 @@ public class WriteToTxt {
             e.printStackTrace();
         }
     }
+
 
     public static void saveTestItemInfo(CTestItem cTestItem){
         try{
@@ -174,7 +176,6 @@ public class WriteToTxt {
             e.printStackTrace();
         }
     }
-
 
 
 }

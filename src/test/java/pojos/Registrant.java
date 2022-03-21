@@ -34,9 +34,7 @@ public class Registrant {
     private String langKey;
     private String password;
     private String email;
-    private int id;
-    private boolean activated;
-    private String [] authorities;
+
 
     public Registrant() {
     }
@@ -106,6 +104,7 @@ public class Registrant {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     public int getId() {
         return id;
