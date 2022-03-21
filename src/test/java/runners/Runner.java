@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","Hooks"},
-        tags = "@US05_Database_validation",
+        tags = "@TC_0005",
         dryRun = false
 )
 public class

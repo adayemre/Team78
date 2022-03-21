@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Registrant {
 
-
     /*
     {
   "activated": true,
@@ -35,6 +34,7 @@ public class Registrant {
     private String langKey;
     private String password;
     private String email;
+
 
     public Registrant() {
     }
@@ -105,6 +105,31 @@ public class Registrant {
         this.email = email;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
+    }
+
+    public String[] getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(String[] authorities) {
+        this.authorities = authorities;
+    }
+
     @Override
     public String toString() {
         return "Registrant{" +
@@ -115,6 +140,7 @@ public class Registrant {
                 ", langKey='" + langKey + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
+                ", id=" + id +
                 '}';
     }
 }
