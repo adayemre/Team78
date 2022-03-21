@@ -5,18 +5,20 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.junit.Assert;
 import pojos.AppointmentOuter;
 import pojos.Patient;
 import utilities.ConfigurationReader;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static Hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static utilities.ApiUtils.getRequest;
 import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.savePatientAppointment;
@@ -83,22 +85,39 @@ public class AppointmentStepDefs {
 
 //===================================GET REQUEST==================================================================================
 
+
+
     @Given("user sends the get request for appointments data")
     public void user_sends_the_get_request_for_appointments_data() {
         response = getRequest(generateToken(), ConfigurationReader.getProperty("appointments_endpoint"));
     }
 
     @Then("user deserializes data to Java and validates {string} {string} {string} {string} and {string}")
-    public void user_deserializes_data_to_Java_and_validates(String firstname, String lastname, String ssn, String email, String phone) {
+    public void user_deserializes_data_to_Java_and_validates(String firstname, String lastname, String ssn, String email, String phone) throws IOException {
 
-        JsonPath json=response.jsonPath();
-        String patients=json.getList("patient").toString();
+        //1.way:
+//        JsonPath json=response.jsonPath();
+//        String patients=json.getList("patient").toString();
+//
+//        Assert.assertTrue(patients.contains(firstname));
+//        Assert.assertTrue(patients.contains(lastname));
+//        Assert.assertTrue(patients.contains(ssn));
+//        Assert.assertTrue(patients.contains(email));
+//        Assert.assertTrue(patients.contains(phone));
 
-        Assert.assertTrue(patients.contains(firstname));
-        Assert.assertTrue(patients.contains(lastname));
-        Assert.assertTrue(patients.contains(ssn));
-        Assert.assertTrue(patients.contains(email));
-        Assert.assertTrue(patients.contains(phone));
+        //2.way:
+        ObjectMapper obj=new ObjectMapper();
+        AppointmentOuter [] appointmentOuters=obj.readValue(response.asString(),AppointmentOuter[].class);
+        List<Object> appointmentList=new ArrayList<>(Arrays.asList(appointmentOuters));
+        String appointments=appointmentList.toString();
+
+        assertTrue(appointments.contains(firstname));
+        assertTrue(appointments.contains(lastname));
+        assertTrue(appointments.contains(ssn));
+        assertTrue(appointments.contains(email));
+        assertTrue(appointments.contains(phone));
+
+
 
 
     }

@@ -16,17 +16,17 @@ Feature: Appointment Api functionalities
     |firstname|lastname|ssn|email|375-257-4721|2022-03-24|
 
 
-  @AppointmentGetApi
+  @AppointmentGetApi @bulentAp
   Scenario Outline: api get request for appointments
     Given user sends the get request for appointments data
     Then user deserializes data to Java and validates "<firstname>" "<lastname>" "<ssn>" "<email>" and "<phone number>"
 
     Examples: appointment data created with Post request
-    |firstname           |lastname           |ssn              |email                           |phone number      |
-    |firstName=Arthur    |lastName=Hegmann   |ssn=714-51-3242  |email=lucina.brakus@gmail.com   |phone=973-212-4556|
-    |firstName=Lakeisha  |lastName=Little    |ssn=266-95-6537  |email=ricarda.wiegand@yahoo.com |phone=973-212-4556|
-    |firstName=Cornelia  |lastName=Goodwin   |ssn=717-93-9632  |email=aron.orn@yahoo.com        |phone=273-362-9854|
-    |firstName=Paul      |lastName=Bashirian |ssn=202-45-3723  |email=maximo.kirlin@yahoo.com   |phone=375-257-4721|
+    |firstname |lastname  |ssn          |email                     |phone number|
+    |Lakeisha  |Little    |266-95-6537  |ricarda.wiegand@yahoo.com |973-212-4556|
+    |Cornelia  |Goodwin   |717-93-9632  |aron.orn@yahoo.com        |273-362-9854|
+    |Paul      |Bashirian |202-45-3723  |maximo.kirlin@yahoo.com   |375-257-4721|
+    |Arthur             |Hegmann            |714-51-3242      |lucina.brakus@gmail.com         |973-212-4556|
 
 
 

@@ -32,3 +32,4 @@ Registrant{firstName='Elvin', lastName='Flatley', ssn='760-57-5801', login='sher
 Registrant{firstName='Claretta', lastName='Effertz', ssn='808-76-0174', login='kasha.osinski', langKey='Eng', password='*TB@LD!*%', email='candice.nitzsche@gmail.com'}
 Registrant{firstName='Talitha', lastName='Kuvalis', ssn='062-50-0665', login='carter.moore', langKey='Eng', password='lk!@0#^8dm', email='esteban.crist@yahoo.com'}
 Registrant{firstName='Mayme', lastName='Trantow', ssn='581-79-3524', login='randall.schamberger', langKey='Eng', password='Psm3b5Dr0sG', email='dennis.connelly@gmail.com'}
+Registrant{firstName='Barney', lastName='Bosco', ssn='615-77-8069', login='dung.heathcote', langKey='Eng', password='8I^XK3*A', email='reyes.stiedemann@yahoo.com'}

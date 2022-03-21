@@ -18,3 +18,4 @@ Patient{country=null, cstate=null, email='luis.hagenes@hotmail.com', firstName='
 Patient{country=null, cstate=null, email='carie.dubuque@hotmail.com', firstName='Gisela', id=null, lastName='Bahringer', phone='973-212-4556', ssn='619-37-5601', user=null, startDate='2022-03-22'}
 Patient{country=null, cstate=null, email='kristle.oreilly@hotmail.com', firstName='Julian', id=null, lastName='Klein', phone='973-212-4556', ssn='517-06-7686', user=null, startDate='2022-03-22'}
 Patient{country=null, cstate=null, email='leroy.rogahn@yahoo.com', firstName='Louisa', id=null, lastName='Ward', phone='973-212-4556', ssn='017-90-4192', user=null, startDate='2022-03-22'}
+Patient{country=null, cstate=null, email='wilford.bernier@gmail.com', firstName='Daysi', id=null, lastName='Cole', phone='973-212-4556', ssn='583-85-7034', user=null, startDate='2022-03-22'}

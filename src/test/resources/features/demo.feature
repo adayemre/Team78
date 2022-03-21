@@ -11,38 +11,6 @@ Feature: demo
       |invalid ssn|
       |123-$5-6789 |
 
-    @UIRegistration
-    @registration_ssn_blank
-  Scenario Outline: TC03 ssn can not be left blank
-    Given user enters ssn number as "<blank>"
-    And user proceeds to the next field
-    Then user verifies the error message as "Your SSN is required."
-    Examples: ssn is blank
-      |blank|
-      |     |
-
-    @UIRegistration
-    @registration_firstname_blank
-  Scenario Outline: TC05 first name can not be left blank
-    Given user enters firstname as "<blank>"
-    And user proceeds to the next field
-    Then user verifies the error message as "Your FirstName is required."
-    Examples: first name is blank
-      |blank|
-      |     |
-
-
-    @UIRegistration
-    @registration_lastname_blank
-  Scenario Outline: TC07 last name can not be left blank
-    Given user enters lastname as "<blank>"
-    And user proceeds to the next field
-    Then user verifies the error message as "Your LastName is required."
-    Examples: first name is blank
-      |blank|
-      |     |
-
-
   @UIRegistration
   @registration_all_valid
 Scenario: TC08 registering with valid credentials
