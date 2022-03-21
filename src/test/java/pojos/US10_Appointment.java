@@ -74,6 +74,7 @@ public class US10_Appointment {
         this.status = status;
     }
 
+
     @Override
     public String toString() {
         return "US10_Appointment{" +

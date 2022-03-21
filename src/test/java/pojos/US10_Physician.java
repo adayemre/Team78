@@ -12,6 +12,7 @@ public class US10_Physician {
     }
 
 
+
     public US10_Physician(US10_User user, String firstName, int id) {
         this.user = user;
         this.firstName = firstName;
@@ -41,6 +42,7 @@ public class US10_Physician {
     public void setId(int id) {
         this.id = id;
     }
+
 
     @Override
     public String toString() {

@@ -31,6 +31,4 @@ public class US0010_SignInPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signin_button;
 
-
-
 }

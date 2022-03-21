@@ -2,6 +2,7 @@ package pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class US10_User {
     private String login;
@@ -9,6 +10,7 @@ public class US10_User {
 
     public US10_User() {
     }
+
 
     public US10_User(String login, int id) {
         this.login = login;
@@ -19,6 +21,7 @@ public class US10_User {
     public String getLogin() {
         return login;
     }
+
 
     public void setLogin(String login) {
         this.login = login;
@@ -31,6 +34,7 @@ public class US10_User {
         this.id = id;
     }
 
+
     @Override
     public String toString() {
         return "US10_User{" +
@@ -39,3 +43,4 @@ public class US10_User {
                 '}';
     }
 }
+

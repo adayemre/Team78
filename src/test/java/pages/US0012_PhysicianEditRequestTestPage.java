@@ -31,3 +31,4 @@ public class US0012_PhysicianEditRequestTestPage {
     public List<WebElement> checkmarkOptions;
 
 }
+
