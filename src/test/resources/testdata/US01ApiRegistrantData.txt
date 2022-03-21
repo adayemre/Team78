@@ -32,10 +32,5 @@ Registrant{firstName='Elvin', lastName='Flatley', ssn='760-57-5801', login='sher
 Registrant{firstName='Claretta', lastName='Effertz', ssn='808-76-0174', login='kasha.osinski', langKey='Eng', password='*TB@LD!*%', email='candice.nitzsche@gmail.com'}
 Registrant{firstName='Talitha', lastName='Kuvalis', ssn='062-50-0665', login='carter.moore', langKey='Eng', password='lk!@0#^8dm', email='esteban.crist@yahoo.com'}
 Registrant{firstName='Mayme', lastName='Trantow', ssn='581-79-3524', login='randall.schamberger', langKey='Eng', password='Psm3b5Dr0sG', email='dennis.connelly@gmail.com'}
-Registrant{firstName='Sam', lastName='Vandervort', ssn='648-56-6742', login='tamekia.jacobi', langKey='Eng', password='i2217WIvkx9a^c', email='see.hyatt@hotmail.com'}
-Registrant{firstName='Carey', lastName='Ernser', ssn='832-25-7073', login='marshall.pfeffer', langKey='Eng', password='MQgvFF3zRmb9CT', email='francesca.towne@hotmail.com'}
-Registrant{firstName='Jacqueline', lastName='Kuhlman', ssn='700-76-9953', login='harrison.deckow', langKey='Eng', password='3V#3YxKoor', email='hal.nolan@hotmail.com'}
-Registrant{firstName='Karl', lastName='Mayer', ssn='456-02-4768', login='kerry.stamm', langKey='Eng', password='O00J^Z8*O8cI^', email='aron.little@gmail.com'}
-Registrant{firstName='Bobby', lastName='Beier', ssn='803-49-1491', login='haywood.luettgen', langKey='Eng', password='73nji$SkOvG&8', email='myles.fisher@gmail.com'}
-Registrant{firstName='Effie', lastName='Stanton', ssn='728-10-0747', login='bree.morissette', langKey='Eng', password='MtGR1o!9#b4zN', email='vallie.graham@gmail.com'}
-Registrant{firstName='Glady', lastName='Murazik', ssn='191-02-8695', login='nestor.harvey', langKey='Eng', password='vkpa%z7C', email='blair.kemmer@yahoo.com'}
+Registrant{firstName='Barney', lastName='Bosco', ssn='615-77-8069', login='dung.heathcote', langKey='Eng', password='8I^XK3*A', email='reyes.stiedemann@yahoo.com'}
+
