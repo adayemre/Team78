@@ -50,7 +50,7 @@ public class HomePageStepDefs {
     @When("User clicks on firstnamebox and clears")
     public void user_clicks_on_firstnamebox_and_clears() {
         Driver.waitAndClick(settingsPage.firstNameBox);
-        Driver.wait(1);
+        Driver.wait(2);
         settingsPage.firstNameBox.clear();
     }
     @When("User updates firstname as {string}")

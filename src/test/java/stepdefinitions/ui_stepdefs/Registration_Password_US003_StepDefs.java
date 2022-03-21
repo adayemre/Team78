@@ -17,8 +17,9 @@ public class Registration_Password_US003_StepDefs {
         Driver.getDriver();
     }
     @When("user navigates to home page")
-    public void user_navigates_to_home_page() {
+    public void user_navigates_to_home_page() throws InterruptedException {
         Driver.getDriver().navigate().to(ConfigurationReader.getProperty("medunna_login_url"));
+        Thread.sleep(2);
     }
     @When("user verifies home page is visible")
     public void user_verifies_home_page_is_visible() {

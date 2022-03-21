@@ -12,7 +12,7 @@ Feature: demo
       |123-$5-6789 |
 
   @UIRegistration
-  @registration_all_valid
+  @registration_all_valid @Smoke
 Scenario: TC08 registering with valid credentials
 Given user enters ssn number
 And user enters firstname
@@ -25,7 +25,7 @@ When user clicks on register button
 Then user verifies the success message as "Registration Saved"
 And user creates the records to a correspondent file
 
-@ApiPostRegistrant
+@ApiPostRegistrant @Smoke
 Scenario Outline: TC09 Api registrant POST request and validation
 Given user sets the necessary path params
 And user sets the expected data "<firstname>" "<lastname>" "<SSN>" "<email>" "<username>" "<password>" "<lan>"
@@ -37,7 +37,7 @@ Examples: api test data
 |firstname|lastname|SSN        |email            |username |password |lan|
 |Stephan  |Taylor  |215-83-1456|stephan@gmail.com|s.taylor |123T45as?|Eng|
 
-@ApiRegistrant
+@ApiRegistrant @Smoke
 Scenario Outline: TC08 Api registrant GET request and validation
 Given user sets the endpoint to get user info with "<SSN>"
 And user sets the expected data as "<firstname>" "<lastname>" "<SSN>" "<email>" "<username>" "<password>"
@@ -49,7 +49,7 @@ Examples: previously created data
 |Alton    |Casper   |527-87-5703|theresia.cummings@gmail.com|vergie.donnelly|Q9@L*%H7          |
 |Bud      |Robel    |691-81-5313|eileen.howe@gmail.com      |efrain.hyatt   |Ww25EMQr!ax4      |
 
-  @Registrant_DB_validation
+  @Registrant_DB_validation @Smoke
   Scenario Outline: DB registrant validation with SSN
     Given user sets a connection with database
     And user selects all "ssn" column data
@@ -72,7 +72,7 @@ Examples: previously created data
     And user verifies fifth strength bar colour add "c"
 
 
-  @registration_password_specialchar
+  @registration_password_specialchar @Smoke
   Scenario: Registration_Password_SpecialChar_Changes
     When user launches the browser
     And user navigates to home page
@@ -95,7 +95,7 @@ Examples: previously created data
     And user verifies registration password 4char
 
 
-  @US_004
+  @US_004 @Smoke
   Scenario Outline: verifying login functionalty
     Given User is on the home page
     And User clicks on account icon
@@ -142,7 +142,7 @@ Examples: previously created data
       | useremre  |   1234    |
 
 
-  @US05_patient_appointment
+  @US05_patient_appointment @Smoke
   Scenario:Make_appointment_with_correct_credentials
     When user launches the browser
     And user navigates to home page
@@ -208,7 +208,7 @@ Examples: previously created data
       | usertugba | 123Tugba | User      |
 
 
-  @TC_0002
+  @TC_0002 @Smoke
   Scenario Outline:TC_0002 updating lastname
     Given User is on the main page
     And User navigates to login page
@@ -256,7 +256,7 @@ Examples: previously created data
     And verifies that the invalid date message does not appear
     Then Close the application
 
-  @AppointmentPostApi
+  @AppointmentPostApi @Smoke
   Scenario Outline: Api POST request for new appointment
     Given user sets the path params
     And user sets expected data "<firstname>" "<lastname>" "<ssn>" "<email>" "<phone number>" "<appointment date>"
@@ -270,7 +270,7 @@ Examples: previously created data
 
 
 
-  @AppointmentGetApi
+  @AppointmentGetApi @Smoke
   Scenario Outline: Api GET request for appointments
     Given user sends the get request for appointments data
     Then user deserializes data to Java and validates "<firstname>" "<lastname>" "<ssn>" "<email>" and "<phone number>"
@@ -307,7 +307,7 @@ Examples: previously created data
       | currentPassword | newPassword | confirmationPassword |
       | 123Recep        | 123recep    |                      |
 
-  @for_password_not_match
+  @for_password_not_match @Smoke
   Scenario Outline: For_Password_Not_Match
     When user launches the browser
     And user navigates to home page
@@ -361,7 +361,7 @@ Examples: previously created data
       | 123ReCEP        | 123recep    | 123recep             |
 
 
-  @physician_appointments
+  @physician_appointments @Smoke
   Scenario Outline: TC0001_my appointments_with_physician_validate
     Given user is on the homepage
     When user clicks human icon
@@ -386,7 +386,7 @@ Examples: previously created data
       |Jo       |789456123 |
 
   @AppointmentGetApi
-  @physician_appoinments_with_api_secondway
+  @physician_appoinments_with_api_secondway @Smoke
   Scenario Outline:Api GET request for users
     Given user sends the get request for physician_appointments with data "<fromdate>" and "<toDate>" and "<id>"
     And user deserializes physician_appointments with date data to java
@@ -397,7 +397,7 @@ Examples: previously created data
       |2022-03-03|2022-03-16|10642|
 
 
-  @validate_physician_db
+  @validate_physician_db @Smoke
   Scenario: DB validation physician
     Given user connect to DB
     And user gets "*" from "appointment" table
@@ -429,7 +429,7 @@ Examples: previously created data
     Then sign out
 
   @UI_US_09
-  @UStaffFunctions
+  @UStaffFunctions @Smoke
   Scenario: Staff View patient information navigating to view portal
     Given Go to medunna.com homepage
     When User signs in as Staff
@@ -451,14 +451,14 @@ Examples: previously created data
     Then verify Delete button is not dispalyed
 
   @DB_US_09
-  @UStaffFunctionsDB
+  @UStaffFunctionsDB @Smoke
   Scenario: Validate patient's eMail with DB
     Given user sets a connection with the database
     And user selects all email column data
     Then user validates patient's eMail with the database
 
   @AppointmentGetApi
-  @API_US_05
+  @API_US_05 @Smoke
   Scenario: Get appointment info and validate
     When user sets the Base Url
     And user sends the GET request and get the response
@@ -467,7 +467,7 @@ Examples: previously created data
 
 
   @US_0011
-  @TC_0001
+  @TC_0001 @Smoke
   Scenario Outline: Edit_An_Appointment
     Given User is on home page
     And User navigate to login page
@@ -507,7 +507,7 @@ Examples: previously created data
       |username   |password|
       |doctorrecep|123Recep|
 
-  @US_0013TC_0002
+  @US_0013TC_0002 @Smoke
   Scenario Outline: Doctor_Should_Able_To_Request_Inpatient
     Given Doctor is on home page
     And Doctor navigate to login page
