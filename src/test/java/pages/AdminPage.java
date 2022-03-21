@@ -57,9 +57,15 @@ public class AdminPage {
 
     @FindBy(xpath = "//a[@href='/admin/user-management/tugbauser/delete']")
     public WebElement deleteTugbaButton;
-
-    @FindBy(xpath = "(//button[@class='btn btn-danger'])[5]")
+                     //(//button[@type='button'])[21]
+                   //   /html/body/div[2]/div/div[1]/div/div/div[3]/button[2]/svg
+                    ///html/body/div[2]/div/div[1]/div/div/div[3]/button[2]/svg
+                     //*[@id="jhi-confirm-delete-patient"]/span
+    @FindBy(xpath = "//div[@class='modal-footer']/button[2]")
     public WebElement confirmDelete;
+
+    @FindBy(xpath = "//*[contains(text(),'A user is deleted with')]")
+    public WebElement userDeletedMessage;
 
 
 

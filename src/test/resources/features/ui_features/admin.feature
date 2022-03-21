@@ -19,9 +19,9 @@ Feature:setting homepage feature
       | admintugba | 123Tugba |
 
 
-
+    @CreateUpdateDelete
     @UpdateUser #@UIRegistration ile birlikte çalıştırılacak
-    Scenario Outline:TC_0001
+    Scenario Outline:TC_0002
       When User provides valid "<username>" and "<password>"
       And  User click Sign in button
       And admin clicks administration button

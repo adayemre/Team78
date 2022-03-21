@@ -2,7 +2,7 @@ Feature: test all registrant data
 
 
 #  @SmokeTest
-
+  @CreateUpdateDelete
     @UIRegistration
   Scenario Outline: test registration
     Given user provides ssn id "<SSN>"
@@ -17,7 +17,7 @@ Feature: test all registrant data
 #      | 384-37-3827 | Irfan     | Pishkin  | irfanpish | irfan@gmail.com | asdfA123. |
       | 383-35-3837 | tugbauser     |tugbauser | tugbauser | tugbauser@gmail.com | 123Tugba |
 
-
+   @Test
 #  @UIRegistration
   Scenario Outline: test password strength
     Given user provides the password "<password>"

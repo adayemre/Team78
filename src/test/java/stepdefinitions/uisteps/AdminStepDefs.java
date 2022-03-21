@@ -141,6 +141,9 @@ public class AdminStepDefs {
         Driver.waitAndClick(adminPage.deleteTugbaButton);
         Driver.wait(3);
         Driver.waitAndClick(adminPage.confirmDelete);
+        Driver.wait(3);
+        Assert.assertTrue(adminPage.userDeletedMessage.isDisplayed());
+        Driver.wait(3);
     }
 
 
