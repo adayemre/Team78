@@ -65,7 +65,7 @@ public class US14_DoctorPage {
     public WebElement AppointmentofInpatient;
 
 
-    @FindBy(xpath = "(//*[text()='Edit'])[1]")
+    @FindBy(xpath = "(//*[text()='Edit'])[2]")
     public WebElement EditButton;
 
     @FindBy(xpath = "//*[text()='In Patients']")
@@ -92,4 +92,9 @@ public class US14_DoctorPage {
 
     @FindBy(xpath = "//*[@id='in-patient-room']")
     public WebElement RoomTextBox;
+    //*[@id='fromDate']
+    @FindBy(xpath = "//*[@id='fromDate']")
+    public WebElement fromDateTextBox;
+    @FindBy(xpath = "//*[@id='toDate']")
+    public WebElement toDateTextBox;
 }

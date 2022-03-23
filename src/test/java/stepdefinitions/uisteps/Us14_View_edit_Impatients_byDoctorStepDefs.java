@@ -70,6 +70,7 @@ public class Us14_View_edit_Impatients_byDoctorStepDefs {
 
     @And("user clicks signinlast button")
     public void userClicksSigninlastButton() {
+
         Driver.waitAndClick(signInPage.signinlastButton);
     }
 
@@ -93,11 +94,32 @@ public class Us14_View_edit_Impatients_byDoctorStepDefs {
         Driver.waitAndClick(doctorPage.MyInpatientsbutton);
 
     }
+    @When("doctor clicks on from date for impatient box")
+    public void doctorClicksOnFromDateForImpatientBox() {
+        Driver.waitAndClick(doctorPage.fromDateTextBox);
 
+    }
+
+    @Then("doctor enters valid start date")
+    public void doctorEntersValidStartDate() {
+        Driver.waitAndSendText(doctorPage.fromDateTextBox,"05.03.2022");
+        Driver.wait(2);
+    }
+
+    @Then("doctor clicks on end date of inpatient text box")
+    public void doctorClicksOnEndDateOfInpatientTextBox() {
+        Driver.waitAndClick(doctorPage.toDateTextBox);
+    }
+
+    @Then("doctor enters valid end date")
+    public void doctorEntersValidEndDate() {
+        Driver.waitAndSendText(doctorPage.toDateTextBox,"19.03.2022");
+        Driver.wait(7);
+    }
 
     @Then("Doctor should see and verify ID of InPatient information")
     public void doctorShouldSeeAndVerifyIDOfInPatientInformation() {
-        Assert.assertTrue(Driver.waitForVisibility(doctorPage.IDofInpatient, 3).isDisplayed());
+        Assert.assertTrue(Driver.waitForVisibility(doctorPage.IDofInpatient, 4).isDisplayed());
 
     }
 
@@ -143,6 +165,7 @@ public class Us14_View_edit_Impatients_byDoctorStepDefs {
 
     }
 
+
     @Given("Doctor clicks on Edit button for InPatients")
     public void doctor_clicks_on_edit_button_for_in_patients() {
         Driver.waitAndClick(doctorPage.EditButton);
@@ -156,7 +179,7 @@ public class Us14_View_edit_Impatients_byDoctorStepDefs {
 
     @Then("Doctor provide valid Start date")
     public void doctorProvideValidStartDate() {
-        Driver.waitAndSendText(doctorPage.StartDateTextBox,"25.03.2022");
+        Driver.waitAndSendText(doctorPage.StartDateTextBox,"26.03.2022");
     }
 
     @Then("doctor clicks on EndDate text box")
@@ -176,7 +199,7 @@ public class Us14_View_edit_Impatients_byDoctorStepDefs {
 
     @Then("doctor provide valid date")
     public void doctorProvideValidDate() {
-        Driver.waitAndSendText(doctorPage.CreatedDateTextBox,"20.03.2022");
+        Driver.waitAndSendText(doctorPage.CreatedDateTextBox,"26.03.2022");
     }
 
     @Then("doctor clicks on Status textbox")
@@ -209,6 +232,9 @@ public class Us14_View_edit_Impatients_byDoctorStepDefs {
     public void doctorSelectsAnyAppropriateRoom() {
         Driver.selectAnItemFromDropdown(doctorPage.RoomTextBox,"297:TWIN");
     }
+
+
+
 }
 
 

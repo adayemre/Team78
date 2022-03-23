@@ -13,7 +13,11 @@ Feature: Doctor_Edit_view_impatient feature
     Then user verifies that signed in
     Given Doctor clicks on My Pages dropdown
     Given Doctor clicks on My InpatientButton
-  Scenario:
+
+    When doctor clicks on from date for impatient box
+    Then doctor enters valid start date
+    Then doctor clicks on end date of inpatient text box
+    Then doctor enters valid end date
 
     Then Doctor should see and verify ID of InPatient information
     Then Doctor should see and verify StartDate of InPatient information
@@ -24,11 +28,7 @@ Feature: Doctor_Edit_view_impatient feature
     Then Doctor should see and verify Room of InPatient information
     Then Doctor should see and verify Appointment of InPatient information
 
-
-
-  @US_0014TC_0001
-  Scenario: Doctor should be able to edit inPatient information
-    And Doctor clicks on Edit button for InPatients
+  And Doctor clicks on Edit button for InPatients
   Then Doctor clicks on StartDate text box
   Then Doctor provide valid Start date
   Then doctor clicks on EndDate text box
@@ -42,7 +42,7 @@ Feature: Doctor_Edit_view_impatient feature
 
   @US_0014TC_0002
   Scenario: Doctor should be able to edit inPatient Room
-    And Doctor clicks on Edit button for InPatients
+  And Doctor clicks on Edit button for InPatients
   And doctor clicks room textbox
   Then doctor selects any Appropriate room
   Then doctor clicks Save button
