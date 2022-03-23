@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 
-
 public class HomePage {
 
     public HomePage (){
@@ -19,6 +18,7 @@ public class HomePage {
     @FindBy(xpath = "(//*[@class='dropdown-item'])[1]")
     public WebElement signIn;
 
+
     @FindBy (xpath = "//input[@name='appoDate']")
     public WebElement appoinmentDateCanNotBePastMessage;
 
@@ -29,5 +29,7 @@ public class HomePage {
     public WebElement makeAppointmentButton;
 
 
+
 }
+
 

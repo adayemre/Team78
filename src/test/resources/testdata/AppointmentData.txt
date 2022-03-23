@@ -4,3 +4,4 @@ Appointment{firstname='Vertie', lastname='Davis', ssn='083-87-1926', email='cier
 Appointment{firstname='Charlena', lastname='Wunsch', ssn='889-71-6053', email='gino.balistreri@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
 Appointment{firstname='Denver', lastname='Vandervort', ssn='011-67-4272', email='jeramy.kling@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
 Appointment{firstname='Reginald', lastname='Jacobi', ssn='062-83-2767', email='moses.mclaughlin@gmail.com', email2='null', phoneNumber='416-208-6412', date='13.05.2022'}
+

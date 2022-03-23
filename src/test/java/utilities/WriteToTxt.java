@@ -1,6 +1,7 @@
 package utilities;
 
 import pojos.Appointment;
+
 import pojos.AppointmentMiddle;
 import pojos.Registrant;
 import pojos.RegistrantApi;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 
 public class WriteToTxt {
+
 
 
 
@@ -126,9 +128,11 @@ public class WriteToTxt {
             writer.append(appointment+"\n");
 
             writer.close();
+
         }catch (Exception e){
             e.printStackTrace();
         }
+
 
     }
 
@@ -252,6 +256,7 @@ public class WriteToTxt {
             e.printStackTrace();
         }
     }
+
 
 
 }

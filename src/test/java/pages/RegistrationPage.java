@@ -10,6 +10,7 @@ public class RegistrationPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
     @FindBy(id="ssn")
     public WebElement ssnTextBox;
 
@@ -43,7 +44,7 @@ public class RegistrationPage {
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(255, 153, 0)')]")
     public WebElement passwordStrength2;
 
-   
+
 
     
 
@@ -53,3 +54,4 @@ public class RegistrationPage {
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
     public WebElement passwordStrength3;
 }
+

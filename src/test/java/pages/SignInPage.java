@@ -69,6 +69,7 @@ public class SignInPage {
     @FindBy (xpath = "(//*[@href='#appointment'])[1]")
     public WebElement makeAnAppoinment;
 
+
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement signInDropdown;
     @FindBy(xpath = "//*[@id='login-item']/span")

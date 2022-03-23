@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
+
 public class Registrant {
+
 
     /*
     {
@@ -106,6 +108,7 @@ public class Registrant {
         this.email = email;
     }
 
+
     public int getId() {
         return id;
     }
@@ -130,6 +133,7 @@ public class Registrant {
         this.authorities = authorities;
     }
 
+
     @Override
     public String toString() {
         return "Registrant{" +
@@ -141,6 +145,7 @@ public class Registrant {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", id=" + id +
+
                 '}';
     }
 }

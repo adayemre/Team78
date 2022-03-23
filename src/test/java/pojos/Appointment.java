@@ -7,14 +7,13 @@ public class Appointment {
     private String lastname;
     private String ssn;
     private String email;
-
-    
     private String email2;
     private String phoneNumber;
     private String date;
 
     public Appointment() {
     }
+
     public Appointment(String firstname, String lastname, String ssn, String email, String phoneNumber, String date) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -71,8 +70,6 @@ public class Appointment {
     public void setDate(String date) {
         this.date = date;
     }
-      
-    
 
     }
     public String getEmail2() {
@@ -90,6 +87,7 @@ public class Appointment {
     }
     
   
+
     @Override
     public String toString() {
         return "Appointment{" +
@@ -102,4 +100,6 @@ public class Appointment {
                 ", date='" + date + '\'' +
                 '}';
     }
+
 }
+

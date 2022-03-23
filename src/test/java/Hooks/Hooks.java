@@ -65,6 +65,7 @@ public class Hooks {
                 ConfigurationReader.getProperty("db_password"));
     }
 
+
     @Before( value = "@DBUsers")
     public void createNewDBUserConnection(){
         createConnection(ConfigurationReader.getProperty("db_credentials_url"),
@@ -102,11 +103,13 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
     }
 
+
    
     @Before(value = "@ApiRegistrant2")
     public void setUpApi2(){
         spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
     }
+
 
     @Before(value = "@US015_CreateEditPatient")
     public void setUpUS015(){
@@ -131,7 +134,6 @@ public class Hooks {
             final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png","screenshots");
         }
-
 
         Driver.closeDriver();
 
