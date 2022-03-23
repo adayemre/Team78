@@ -5,17 +5,19 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+
 public class HomePage {
-    public HomePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+
+    public HomePage (){
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
     @FindBy(xpath = "//li[@id='account-menu']")
-    public static WebElement accountMenu;
+    public WebElement accountMenu;
 
     @FindBy(xpath = "(//*[@class='dropdown-item'])[1]")
-    public static WebElement signIn;
+    public WebElement signIn;
+
 
     @FindBy (xpath = "//input[@name='appoDate']")
     public WebElement appoinmentDateCanNotBePastMessage;
@@ -28,7 +30,6 @@ public class HomePage {
 
 
 
-
-
-
 }
+
+

@@ -7,11 +7,9 @@ public class Appointment {
     private String lastname;
     private String ssn;
     private String email;
+    private String email2;
     private String phoneNumber;
     private String date;
-
-    //variables, constructors, getters and setters, toString
-
 
     public Appointment() {
     }
@@ -73,6 +71,23 @@ public class Appointment {
         this.date = date;
     }
 
+    }
+    public String getEmail2() {
+        return email2;
+    }
+
+    public void setEmail2(String email) {
+        this.email2 = email2;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
+  
+
     @Override
     public String toString() {
         return "Appointment{" +
@@ -80,8 +95,11 @@ public class Appointment {
                 ", lastname='" + lastname + '\'' +
                 ", ssn='" + ssn + '\'' +
                 ", email='" + email + '\'' +
+                ", email2='" + email2 + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", date='" + date + '\'' +
                 '}';
     }
+
 }
+

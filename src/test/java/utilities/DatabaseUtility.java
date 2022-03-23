@@ -1,6 +1,5 @@
 package utilities;
 
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,9 +8,13 @@ import java.util.Map;
 
 public class DatabaseUtility {
 
+
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
+
+
     public static void createConnection() {
         String url = ConfigurationReader.getProperty("database_url");
         String user = ConfigurationReader.getProperty("database_user");
@@ -26,17 +29,11 @@ public class DatabaseUtility {
 
 
     public static void main(String[] args) {
+
         createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
-
-
-        System.out.println(getColumnData ("Select * FROM patient", "email"));
-
+        System.out.println(getColumnData("Select * FROM jhi_user", "first_name"));
         closeConnection();
-
-
-
     }
-
 
     public static void createConnection(String url, String user, String password) {
 
@@ -47,6 +44,7 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
+
     public static void closeConnection() {
         try {
             if (resultSet != null) {
@@ -119,6 +117,7 @@ public class DatabaseUtility {
         }
         return rowList;
     }
+
     /**
      *
      * @param query
@@ -140,11 +139,14 @@ public class DatabaseUtility {
         }
         return rowList;
     }
+
     /**
      *
      * @param query
      * @return returns query result in a list of maps where the list represents
+
      *         collection of rows and a map represents represent a single row with
+
      *         key being the column name
      */
     public static List<Map<String, Object>> getQueryResultMap(String query) {
@@ -166,6 +168,7 @@ public class DatabaseUtility {
         }
         return rowList;
     }
+
     /**
      *
      * @param query
@@ -187,6 +190,7 @@ public class DatabaseUtility {
         }
         return columns;
     }
+
     public static void executeQuery(String query) {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -201,6 +205,7 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
+
     public static int getRowCount() throws Exception {
         resultSet.last();
         int rowCount = resultSet.getRow();
@@ -208,10 +213,6 @@ public class DatabaseUtility {
     }
 
     public static void insertCountry(String  countryName){
-
-
-
-
     }
 
     public static void executeInsertion(String query) {
@@ -242,13 +243,15 @@ public class DatabaseUtility {
         return max;
     }
 
-    public static Object getCellValuewithRowsAndCells(String query,int row,int cell) {
 
+
+
+    public static Object getCellValuewithRowsAndCells(String query,int row,int cell) {
         return getQueryResultList(query).get(row).get(cell);
     }
 
-    public static List<Object> getRowListWithParam(String query,int row) {
 
+    public static List<Object> getRowListWithParam(String query,int row) {
         return getQueryResultList(query).get(row);
     }
 
