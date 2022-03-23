@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class Driver {
     //create a driver instance
@@ -314,5 +315,27 @@ public class Driver {
 
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
+    }
+
+    public static String randomStringWith2Char(){
+        String string = "recep_aykurt_";
+        Random r = new Random();
+        int low = 97;
+        int high = 123;
+        int result1 = r.nextInt(high-low) + low;
+        int result2 = r.nextInt(high-low) + low;
+        return string + (char)result1 + (char)result2;
+    }
+
+    public static String randomStringWith4Char(){
+        String string = "recep_aykurt_";
+        Random r = new Random();
+        int low = 97;
+        int high = 123;
+        int result1 = r.nextInt(high-low) + low;
+        int result2 = r.nextInt(high-low) + low;
+        int result3 = r.nextInt(high-low) + low;
+        int result4 = r.nextInt(high-low) + low;
+        return string + (char)result1 + (char)result2 + (char)result3 + (char)result4;
     }
 }

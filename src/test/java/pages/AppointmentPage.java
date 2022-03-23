@@ -41,9 +41,5 @@ public class AppointmentPage {
     @FindBy(xpath = "//*[text()='Appointment registration saved!']")
     public WebElement successMessageToastContainer;
 
+
 }
-
-
-
-
-

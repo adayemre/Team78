@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 public class RegistrationPage {
 
     public RegistrationPage(){
@@ -44,6 +43,13 @@ public class RegistrationPage {
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(255, 153, 0)')]")
     public WebElement passwordStrength2;
 
+   
+
+    
+
+    @FindBy(xpath = "//*[text()='Registration']")
+    public WebElement registrationText;
+  
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
     public WebElement passwordStrength3;
 }
