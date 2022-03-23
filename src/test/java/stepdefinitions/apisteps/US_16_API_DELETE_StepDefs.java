@@ -17,7 +17,7 @@ public class US_16_API_DELETE_StepDefs {
     @When("set the room Base Url")
     public void set_the_room_base_url() {
         spec=new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("base_url")).build();
-        spec.pathParams("1","api","2","rooms","3",33587);
+        spec.pathParams("1","api","2","rooms","3",37296);
 
 
     }

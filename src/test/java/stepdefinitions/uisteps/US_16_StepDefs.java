@@ -187,7 +187,7 @@ public class US_16_StepDefs {
     @And("click on delete in the opening alert")
     public void clickOnDeleteInTheOpeningAlert() throws InterruptedException {
         rooms.confirmDelete.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         Driver.waitAndClick(rooms.confirmDelete);
     }
 
