@@ -256,6 +256,7 @@ Examples: previously created data
     And verifies that the invalid date message does not appear
     Then Close the application
 
+
   @AppointmentPostApi @Smoke
   Scenario Outline: Api POST request for new appointment
     Given user sets the path params

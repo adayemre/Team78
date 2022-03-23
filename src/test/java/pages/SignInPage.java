@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+
 import java.security.PublicKey;
 public class SignInPage {
     public SignInPage(){
@@ -19,6 +20,7 @@ public class SignInPage {
     @FindBy(xpath = "//*[@type='submit']")
     public  WebElement signIn;
 
+
     @FindBy(xpath = "(//div[@role='alert'])[1]")
     public WebElement failedMessagePopup;
 
@@ -26,11 +28,13 @@ public class SignInPage {
     public WebElement administration;
     @FindBy(xpath = "//*[text()='emre user']")
     public WebElement emreuserText;
-    @FindBy(xpath = "//*[text()='Cancel']")
+
+  @FindBy(xpath = "//*[text()='Cancel']")
     public WebElement cancelButton;
 
     @FindBy(xpath = "(//*[text()='Sign in'])[2]")
     public WebElement signInText;
+
 
     @FindBy(xpath = "//*[text()='Remember me']")
     public WebElement rememberMeText;
@@ -64,7 +68,6 @@ public class SignInPage {
 
     @FindBy (xpath = "(//*[@href='#appointment'])[1]")
     public WebElement makeAnAppoinment;
-
 
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement signInDropdown;

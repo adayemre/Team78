@@ -12,32 +12,44 @@ public class RegistrationPage {
 
     @FindBy(id="ssn")
     public WebElement ssnTextBox;
+
     @FindBy(id = "firstName")
     public WebElement firstnameTextBox;
+
     @FindBy(id = "lastName")
     public WebElement lastnameTextBox;
+
     @FindBy(id = "username")
     public WebElement usernameTextBox;
+
     @FindBy(id = "email")
     public WebElement emailTextbox;
+
     @FindBy(xpath = "//*[text()='New password']/following::input")
     public WebElement firstPasswordTextBox;
-    @FindBy(id= "secondPassword")
 
+    @FindBy(id= "secondPassword")
     public WebElement newPasswordTextBox;
-    public WebElement secondPasswordTextBox;
 
     @FindBy(id = "register-submit")
     public WebElement registerButton;
+
     @FindBy(xpath = "//*[contains(text(),'Registration Saved')]")
     public WebElement successMessageToastContainer;
 
-    @FindBy(xpath = "//*[text()='Registration']")
-    public WebElement registrationText;
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(255, 0, 0)')]")
     public WebElement passwordStrength1;
+
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(255, 153, 0)')]")
     public WebElement passwordStrength2;
+
+   
+
+    
+
+    @FindBy(xpath = "//*[text()='Registration']")
+    public WebElement registrationText;
+  
     @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
     public WebElement passwordStrength3;
 }

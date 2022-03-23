@@ -8,6 +8,7 @@ import java.util.Map;
 public class DatabaseUtility {
 
 
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
@@ -25,6 +26,7 @@ public class DatabaseUtility {
     }
 
     public static void main(String[] args) {
+
         createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
         System.out.println(getColumnData("Select * FROM jhi_user", "first_name"));
         closeConnection();
@@ -228,6 +230,7 @@ public class DatabaseUtility {
         }
         return max;
     }
+
 
 
 

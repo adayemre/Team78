@@ -1,5 +1,7 @@
 package utilities;
 
+
+import java.io.BufferedWriter;
 import pojos.CTestItem;
 import pojos.Registrant;
 
@@ -9,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadTxt {
+
 
     public static List<Registrant> getAllRegistrants(){
         List <Registrant > list = new ArrayList<>();
@@ -166,6 +169,7 @@ public class ReadTxt {
             //Read the records of the file in given location
             BufferedReader br = new BufferedReader(fileReader);
             String line = br.readLine();
+
             while(line != null){
                 CTestItem cTestItem = new CTestItem();
 

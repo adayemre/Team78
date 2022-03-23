@@ -5,6 +5,23 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import pojos.Registrant;
+import utilities.ConfigurationReader;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+import static utilities.ApiUtils.getRequest;
+
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.Registrant;
@@ -21,6 +38,8 @@ public class RegistrantApiSteps  {
     Registrant registrant = new Registrant();
     Faker faker = new Faker();
     Response response;
+
+    Registrant registrantsList [];
     Registrant []registrants;
 
     @Given("user sets the necessary path params")
@@ -46,28 +65,27 @@ public class RegistrantApiSteps  {
         registrant.setLogin(username);
         registrant.setPassword(password);
         registrant.setLangKey(lan);
+
 //        Map<String ,Object> expectedData = new HashMap<>();
 //        expectedData.put("firstName", firstname);
 
     }
     @Given("user sends the POST request and gets the response")
     public void user_sends_the_post_request_and_gets_the_response() {
-
-
-
         response = given().spec(spec).contentType(ContentType.JSON).body(registrant).when().post("/{first}/{second}");
     }
     @When("user saves the api records to correspondent files")
     public void user_saves_the_api_records_to_correspondent_files() {
         saveRegistrantData(registrant);
     }
+
     @Then("user validates api records")
     public void user_validates_api_records() throws  Exception{
         response.then().statusCode(201);
         response.prettyPrint();
 
         ObjectMapper obj = new ObjectMapper();
-
+  
         Registrant actualRegistrant = obj.readValue(response.asString(), Registrant.class);
 
         System.out.println(actualRegistrant);

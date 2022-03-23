@@ -3,6 +3,7 @@ package pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Registrant {
 
     /*
@@ -104,7 +105,6 @@ public class Registrant {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public int getId() {
         return id;

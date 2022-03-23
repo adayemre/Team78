@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppointmentOuter {
-
     /*
     [
     {
@@ -25,6 +24,9 @@ public class AppointmentOuter {
         "ctests": null
     },
      */
+    private AppointmentMiddle patient;
+    private String startDate;
+    private Integer id;
     private String createdBy;
     private String createdDate;
     private Integer id;
@@ -36,9 +38,21 @@ public class AppointmentOuter {
     private Physician physician;
     private	Patient patient;
 
-
-
     public AppointmentOuter() {
+    }
+
+    public AppointmentOuter(AppointmentMiddle patient, String startDate, int id) {
+        this.patient = patient;
+        this.startDate = startDate;
+        this.id = id;
+    }
+
+    public AppointmentMiddle getPatient() {
+        return patient;
+    }
+
+    public void setPatient(AppointmentMiddle patient) {
+        this.patient = patient;
     }
 
     public String getAnamnesis() {
@@ -112,6 +126,9 @@ public class AppointmentOuter {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
+
+    
+
 
     public String getStatus() {
         return status;
