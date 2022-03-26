@@ -1,7 +1,7 @@
 Feature: Admin test items functionality
 
   @CreateTestItem @AdminUI
-  Scenario: Admin can create new test items
+  Scenario: US17 Admin can create new test items
     Given user sign-in as admin
     And user selects test item from items-titles dropdown
     And user clicks create a new test item button

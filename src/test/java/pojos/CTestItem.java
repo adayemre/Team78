@@ -21,7 +21,7 @@ public class CTestItem {
     private String defaultValMax;
     private String defaultValMin;
     private String description;
-    private int id;
+    //private int id;
     private String name;
     private String price;
 
@@ -68,13 +68,13 @@ public class CTestItem {
         this.description = description;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;
@@ -100,7 +100,7 @@ public class CTestItem {
                 ", defaultValMax='" + defaultValMax + '\'' +
                 ", defaultValMin='" + defaultValMin + '\'' +
                 ", description='" + description + '\'' +
-                ", id=" + id +
+                //", id=" + id +
                 ", name='" + name + '\'' +
                 ", price='" + price + '\'' +
                 '}';

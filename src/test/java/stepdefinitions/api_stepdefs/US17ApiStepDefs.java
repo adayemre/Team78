@@ -8,6 +8,7 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.CTestItem;
 import utilities.ConfigurationReader;
+import utilities.Driver;
 import utilities.ReadTxt;
 
 import java.io.IOException;
@@ -37,14 +38,16 @@ public class US17ApiStepDefs {
     }
     @Given("user sets expected data")
     public void user_sets_expected_data() {
-        cTestItem.setName(faker.name().firstName()+" test");
+        cTestItem.setName(faker.name().firstName()+"xytest");
         cTestItem.setDescription("mg/dL");
         cTestItem.setPrice(faker.number().numberBetween(50,150)+"");
         cTestItem.setDefaultValMin("50");
         cTestItem.setDefaultValMax("120");
     }
+
     @Given("user send Post request for test item and gets response")
     public void user_send_post_request_for_test_item_and_gets_response() {
+      Driver.wait(2);
       response=postRequestTestItem(generateToken(), ConfigurationReader.getProperty("testItem_endpoint"),cTestItem);
       response.prettyPrint();
     }
@@ -90,9 +93,9 @@ public class US17ApiStepDefs {
     @Then("user validates expected test item records with Api")
     public void userValidatesExpectedTestItemRecordsWithApi() {
         List<String> expectedData=getTestItemNames();
-        //System.out.println("expected:"+ expectedData);
+        System.out.println("expected:"+ expectedData);
         List<String> actualTestItems=getApiTestItemNames();
-        //System.out.println("actual: "+actualTestItems);
+        System.out.println("actual: "+actualTestItems);
         Assert.assertTrue(actualTestItems.containsAll(expectedData));
     }
 

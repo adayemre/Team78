@@ -1,7 +1,7 @@
 Feature: staff functions
 
   @StaffCanOnlyEditAppointments
-  Scenario:
+  Scenario: US21
     Given user is on the main page
     And user sign-in as staff
     And user selects Search Patient option from MYPAGES dropdown
@@ -9,7 +9,7 @@ Feature: staff functions
     Then user verifies that there is no Delete button
 
   @StaffCanNotMakeCompleted
-  Scenario:
+  Scenario: US21
     Given user is on the main page
     And user sign-in as staff
     And user selects Search Patient option from MYPAGES dropdown
@@ -20,7 +20,7 @@ Feature: staff functions
     Then user verifies COMPLETED option is not selectable
 
   @StaffNoRequiredFields
-  Scenario Outline:
+  Scenario Outline: US21
     Given user is on the main page
     And user sign-in as staff
     And user selects Search Patient option from MYPAGES dropdown
@@ -35,7 +35,7 @@ Feature: staff functions
     |     |
 
   @StaffSelectsPhysician
-  Scenario:
+  Scenario: US21
     Given user is on the main page
     And user sign-in as staff
     And user selects Search Patient option from MYPAGES dropdown
@@ -47,7 +47,7 @@ Feature: staff functions
 
 
   @StaffCanViewTestResults
-  Scenario:
+  Scenario: US21
     Given user is on the main page
     And user sign-in as staff
     And user selects Search Patient option from MYPAGES dropdown

@@ -95,7 +95,7 @@ public class US17AdminPage {
     public WebElement confirmDeleteButton;
 
 
-    @FindBy(xpath = "((//*[@href='/c-test-item/33006'])[2]/following::a/following::a)[1]")
+    @FindBy(xpath = "((//*[@href='/c-test-item/37214'])[2]/following::a/following::a)[1]")
     public WebElement deleteButton;
 
 

@@ -34,7 +34,7 @@ public class US21_StaffPage {
     @FindBy(xpath = "(//*[text()='Search Patient'])[1]")
     public WebElement searchPatientButton;
 
-    @FindBy(xpath = "(//tbody//td)[16]/div/a[3]")
+    @FindBy(xpath = "(//*[text()='Show Appointments'])[3]")
     public WebElement showAppointmentsButton;
 
 //    @FindBy(xpath="(//tbody//td)[13]/div/a")
@@ -82,8 +82,8 @@ public class US21_StaffPage {
     @FindBy(id = "appointment-physician")
     public WebElement physicianDropdown;
 
-    @FindBy(xpath = "//*[@value='10509']")
-    public WebElement mariaOption;
+    @FindBy(xpath = "//*[@value='10512']")
+    public WebElement doctor79;
 
     @FindBy(xpath = "//*[text()='Show Tests']")
     public WebElement showTestsButton;
