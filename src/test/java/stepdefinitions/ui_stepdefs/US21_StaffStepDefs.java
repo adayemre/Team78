@@ -57,21 +57,22 @@ public class US21_StaffStepDefs {
     }
     @Then("user verifies UNAPPROVED PENDING and CANCELLED options are selectable")
     public void user_verifies_unapproved_pending_and_cancelled_options_are_selectable() {
+        Driver.wait(1);
         Driver.selectByValue(us21_StaffPage.statusDropdown,"UNAPPROVED");
         Assert.assertTrue(us21_StaffPage.unapprovedOption.isSelected());
 
-        Driver.wait(3);
+        Driver.wait(2);
         Driver.selectByValue(us21_StaffPage.statusDropdown,"PENDING");
         Assert.assertTrue(us21_StaffPage.pendingOption.isSelected());
 
-        Driver.wait(3);
+        Driver.wait(2);
         Driver.selectByValue(us21_StaffPage.statusDropdown,"CANCELLED");
         Assert.assertTrue(us21_StaffPage.canceledOption.isSelected());
 
     }
     @Then("user verifies COMPLETED option is not selectable")
     public void user_verifies_completed_option_is_not_selectable() {
-        Driver.wait(3);
+        Driver.wait(2);
         Driver.selectByValue(us21_StaffPage.statusDropdown,"COMPLETED");
         Assert.assertTrue(!us21_StaffPage.completedOption.isSelected());
     }
@@ -108,8 +109,8 @@ public class US21_StaffStepDefs {
     }
     @Then("user verifies physician is selected")
     public void user_verifies_physician_is_selected() {
-        Driver.wait(3);
-        Assert.assertTrue(us21_StaffPage.mariaOption.isSelected());
+        Driver.wait(2);
+        Assert.assertTrue(us21_StaffPage.doctor79.isSelected());
     }
 
     @Given("user clicks show tests button")

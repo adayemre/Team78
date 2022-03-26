@@ -45,7 +45,7 @@ public class US17UIAdminStepDefs {
     }
     @Then("user provides name")
     public void user_provides_name() {
-        String name=faker.name().firstName()+" test";
+        String name=faker.name().firstName()+"xtest";
         cTestItem.setName(name);
         Driver.waitAndSendText(us17AdminPage.nameTextBox,name);
 

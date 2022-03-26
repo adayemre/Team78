@@ -3,10 +3,7 @@ package utilities;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import pojos.AppointmentOuter;
-import pojos.CTestItem;
-import pojos.Patient;
-import pojos.Registrant;
+import pojos.*;
 
 import static Hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
@@ -32,6 +29,17 @@ public class ApiUtils {
                 ContentType.JSON,
                 "Accept",
                 ContentType.JSON).body(cTestItem).when().post(endpoint);
+        return  response;
+    }
+
+    public static Response postRequestPatient(String token, String endpoint, US015_Create_Edit_Patient_Pojo pojoObject){
+        Response response = given().headers(
+                "Authorization",
+                "Bearer " + token,
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).body(pojoObject).when().post(endpoint);
         return  response;
     }
 
