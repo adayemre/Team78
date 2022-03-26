@@ -52,3 +52,4 @@ public class Rooms {
     @FindBy(xpath = "//*[@id='root']/div/div/div[1]/div")
     public WebElement roomDeletedMessage;
 }
+

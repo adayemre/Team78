@@ -1,4 +1,5 @@
 package pages;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -55,6 +56,7 @@ public class US14_DoctorPage {
     public WebElement SaveButtonforInpatient;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div")
     public WebElement VerificationofInpatientInfo;
+
     @FindBy(xpath = "//*[@id='in-patient-room']")
     public WebElement RoomTextBox;
     //*[@id='fromDate']
@@ -66,3 +68,4 @@ public class US14_DoctorPage {
     @FindBy(xpath = "//*[@id=\"in-patient-room\"]/option[9]")
     public WebElement selectpatientroom;
 }
+

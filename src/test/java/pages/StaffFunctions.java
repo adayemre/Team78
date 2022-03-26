@@ -24,6 +24,7 @@ public class StaffFunctions {
     @FindBy(xpath = " //*[@id='app-view-container']/div/div/div/div[2]/div/table/tbody/tr/td[1]")
     public WebElement searchResult;
 
-
+    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div[2]/div/table/tbody/tr/td[16]")
+    public WebElement rightTextBox;
 
 }

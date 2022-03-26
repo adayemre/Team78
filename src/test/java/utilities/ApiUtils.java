@@ -2,6 +2,10 @@ package utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+import static utilities.Authentication.generateToken;
+
 import io.restassured.specification.RequestSpecification;
 import pojos.*;
 
@@ -9,6 +13,19 @@ import static Hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 
 public class ApiUtils {
+  
+  
+  public static Response getRequest(String token, String endpoint){
+      Response  response = given().headers(
+                "Authorization",
+                "Bearer " + generateToken(),
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).when().get(ConfigurationReader.getProperty("appointments_endpoint"));
+
+      return response;
+    }
 
     public static Response getRequest(String token,String endpoint ){
         Response response = given().headers(

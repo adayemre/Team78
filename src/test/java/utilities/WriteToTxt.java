@@ -1,12 +1,25 @@
 package utilities;
 
+import pojos.Appointment;
+
+import pojos.AppointmentMiddle;
+import pojos.Registrant;
+import pojos.RegistrantApi;
+import pojos.US10_Appointment;
+import stepdefinitions.apisteps.US0010_Physician_Appointments_Api_Step_Defs;
 import pojos.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.List;
 
+import java.util.Map;
+
+
+
 public class WriteToTxt {
+
+
 
 
     public static void saveRegistrantData(Registrant registrant) {
@@ -67,7 +80,34 @@ public class WriteToTxt {
         }
     }
 
-    public static void saveAppointData(AppointmentBT appointment){
+        public static void saveAppointmentData(Appointment appointment) {
+            try {
+                //src/resources/testdata/Registrantdata.txt
+                FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_records"), true);
+                BufferedWriter writer = new BufferedWriter(fileWriter);
+
+                writer.append(appointment+"\n");
+                // writer.append(registrant.toString());
+
+                writer.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    public static void saveApiRegistrantData(RegistrantApi registrantapi) {
+        try {
+            //src/resources/testdata/Registrantdata.txt
+            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("api_registrant_data_file_name"), true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+
+            writer.append(registrantapi + "\n");
+            // writer.append(registrant.toString());
+
+            writer.close();
+        } catch (Exception e) {
+
+     public static void saveAppointData(AppointmentBT appointment){
         try{
             FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_records"), true);
             BufferedWriter writer = new BufferedWriter(fileWriter);
@@ -79,16 +119,32 @@ public class WriteToTxt {
         }
     }
 
+
     public static void saveAppointData(Appointment appointment){
         try{
+
             FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_records"), true);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             writer.append(appointment+"\n");
 
             writer.close();
+
         }catch (Exception e){
             e.printStackTrace();
         }
+
+
+    }
+
+
+
+    public static void saveAppointmentCreation(AppointmentMiddle appointmentCreationAPI){
+        try{
+
+            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("appointment_creation_records"), true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            writer.append(appointmentCreationAPI+"\n");
+
     }
 
     public static void saveAppointmentOuterData(AppointmentOuter appointment){
@@ -114,7 +170,24 @@ public class WriteToTxt {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+
+    public static void saveRegistrantData(List<Object> SSNIds){
+        try{
+            //src/resources/testdata/Registrantdata.txt
+            FileWriter fileWriter = new FileWriter(ConfigurationReader.getProperty("database_registrant_data"), false); // her seferinde listeyi bastan getiriyor öncekileri silse iyi olur
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            for(Object eachSSN : SSNIds){
+                writer.append(eachSSN+",\n");
+            }
+         writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+              
+
 
     public static void saveTestItemInfo(CTestItem cTestItem){
         try{
@@ -131,6 +204,14 @@ public class WriteToTxt {
         }
     }
 
+    public static void saveApiPhysicianAppointment(List<US10_Appointment> list) {
+        try {
+            String path="C:\\Users\\admin\\IdeaProjects\\Team78\\src\\test\\resources\\testdata\\PhysicianAppointment.txt";
+            FileWriter fileWriter = new FileWriter(path, true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            writer.append(list + "\n");
+            // writer.append(registrant.toString());
+
     public static void saveAllTestItems(CTestItem [] cTestItems){
         try{
             //we make it FALSE because we will update all data whenever we make a get request for all. Every time we will get all data
@@ -146,6 +227,7 @@ public class WriteToTxt {
             e.printStackTrace();
         }
     }
+
 
     public static void saveDBTestItemsData(List<Object> testItems) {
         try {

@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 import java.util.List;
 
 public class AdminPage {
@@ -12,10 +11,12 @@ public class AdminPage {
     public AdminPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
     @FindBy(xpath = "//*[text()='Administration']")
     public WebElement administrationButton;
     @FindBy(xpath = "//*[text()='User management']")
     public WebElement userManagement;
+
     //*[@id="app-view-container"]/div/div/div/div/div[1]/table/thead
     //th[@class='hand']
     //table/thead/tr
@@ -49,8 +50,10 @@ public class AdminPage {
     //*[@id="jhi-confirm-delete-patient"]/span
     @FindBy(xpath = "//div[@class='modal-footer']/button[2]")
     public WebElement confirmDelete;
+
     @FindBy(xpath = "//*[contains(text(),'A user is deleted with')]")
     public WebElement userDeletedMessage;
+
 
 
 

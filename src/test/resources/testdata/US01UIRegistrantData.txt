@@ -54,3 +54,4 @@ Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey=
 Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null', id=0}
 Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null', id=0}
 Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null', id=0}
+

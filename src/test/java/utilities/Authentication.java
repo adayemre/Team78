@@ -1,9 +1,9 @@
 package utilities;
+
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,11 +15,13 @@ public class Authentication {
 
 
     public static String generateToken(){
+
         //Set the base url
         //api/authenticate
         spec.pathParams("first", "api", "second", "authenticate");
 
         //Set the expected data
+
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("username", "maryhannah");
         expectedData.put("password", "12345as");
@@ -33,7 +35,6 @@ public class Authentication {
         JsonPath json = response.jsonPath();
 
         return json.getString("id_token");
-    }
 
 
 //    public static String generateToken(){
@@ -70,8 +71,11 @@ public class Authentication {
         response.prettyPrint();
         JsonPath json = response.jsonPath();
         return json.getString("id_token");
+
     }
 
 
 
+
 }
+
